@@ -16,7 +16,6 @@
     "url": "https://github.com/DoomXyz/ThatCook/issues"
   },
   "homepage": "https://github.com/DoomXyz/ThatCook#readme",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
@@ -27,9 +26,10 @@
     "sequelize": "^6.37.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "@babel/node": "^7.26.0",
     "@babel/preset-env": "^7.26.9",
     "sequelize-cli": "^6.6.2"
-  }
+  },
+  "description": ""
 }

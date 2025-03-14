@@ -30,6 +30,13 @@ let userShow = async (req, res) => {
     });
 }
 
+let sanphamShow = async (req, res) => {
+    let data = await CRUDService.getSanPham();
+    return res.render('homepage/Home.ejs', {
+        dataTable: data
+    });
+}
+
 let userEdit = async (req, res) => {
     let maTK = req.query.matk;
     if (maTK) {
@@ -68,4 +75,5 @@ module.exports = {
     userEdit: userEdit,
     updateTodb: updateTodb,
     deleteFromdb: deleteFromdb,
+    sanphamShow: sanphamShow,
 }

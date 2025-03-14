@@ -50,6 +50,19 @@ let getAllUser = () => {
     })
 }
 
+let getSanPham = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let sp = db.SanPham.findAll({
+                raw: true,
+            });
+            resolve(sp);
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
 let getTaiKhoanMATK = (maTK) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -112,4 +125,5 @@ module.exports = {
     getTaiKhoanMATK: getTaiKhoanMATK,
     updateUser: updateUser,
     deleteUser: deleteUser,
+    getSanPham: getSanPham,
 }
