@@ -8,7 +8,7 @@ let createNewUser = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
             let hashPasswordFromBcrypt = await hashUserPassword(data.Password)
-            await db.TaiKhoans.create({
+            await db.TaiKhoan.create({
                 MATK: "Test",
                 Email: data.Email,
                 Password: hashPasswordFromBcrypt,
@@ -40,7 +40,7 @@ let hashUserPassword = (password) => {
 let getAllUser = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            let users = db.TaiKhoans.findAll({
+            let users = db.TaiKhoan.findAll({
                 raw: true,
             });
             resolve(users);
@@ -66,7 +66,7 @@ let getSanPham = () => {
 let getTaiKhoanMATK = (maTK) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await db.TaiKhoans.findOne({
+            let user = await db.TaiKhoan.findOne({
                 where: { MATK: maTK },
                 raw: true
             })
@@ -84,7 +84,7 @@ let getTaiKhoanMATK = (maTK) => {
 let updateUser = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await db.TaiKhoans.findOne({
+            let user = await db.TaiKhoan.findOne({
                 where: { MATK: data.MATK },
             })
             if (user) {
@@ -92,7 +92,7 @@ let updateUser = (data) => {
                 user.SDT = data.SDT;
                 user.DiaChi = data.DiaChi;
                 await user.save();
-                let allUsers = await db.TaiKhoans.findAll();
+                let allUsers = await db.TaiKhoan.findAll();
                 resolve(allUsers);
             } else {
                 resolve();
@@ -106,7 +106,7 @@ let updateUser = (data) => {
 let deleteUser = (matk) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await db.TaiKhoans.findOne({
+            let user = await db.TaiKhoan.findOne({
                 where: { MATK: matk }
             })
             if (user) {

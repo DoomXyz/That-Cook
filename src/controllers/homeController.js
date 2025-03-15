@@ -2,12 +2,13 @@ import db from '../models/index';
 import CRUDService from '../services/CRUDService';
 
 let getHomePage = async (req, res) => {
-    try {
-        let data = await db.TaiKhoans.findAll();
-        return res.render("homepage.ejs", { data: JSON.stringify(data) });
-    } catch (e) {
-        console.log(e)
-    }
+    // try {
+    //     let data = await db.TaiKhoans.findAll();
+    //     return res.render("homepage.ejs", { data: JSON.stringify(data) });
+    // } catch (e) {
+    //     console.log(e)
+    // }
+    return res.redirect("/home");
 }
 
 let userRegister = (req, res) => {

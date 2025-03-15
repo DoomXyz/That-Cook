@@ -1,0 +1,5 @@
+vào myphpadmin chọn thatcookdb và xóa đi
+tạo lại thatcookdb
+mở ctrl+` chạy lệnh
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all

@@ -1,23 +1,29 @@
 'use strict';
+
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         await queryInterface.createTable('LoaiSanPham', {
             MALOAISP: {
-                type: Sequelize.CHAR(10)
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull: false
             },
             TenLoaiSP: {
-                type: Sequelize.STRING(50)
+                type: Sequelize.STRING(50),
+                allowNull: false
             },
             createdAt: {
-                allowNull: false,
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
+                allowNull: false
             },
             updatedAt: {
-                allowNull: false,
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
+                allowNull: false
             }
         });
     },
+
     down: async (queryInterface, Sequelize) => {
         await queryInterface.dropTable('LoaiSanPham');
     }

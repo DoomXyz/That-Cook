@@ -1,34 +1,81 @@
 'use strict';
-const {
-    Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
     class DonHang extends Model {
-        /**
-         * Helper method for defining associations.
-         * This method is not a part of Sequelize lifecycle.
-         * The `models/index` file will call this method automatically.
-         */
         static associate(models) {
-            // define association here
+            DonHang.belongsTo(models.TaiKhoan, {
+                foreignKey: 'MaKH',
+                as: 'KhachHang'
+            });
+            DonHang.belongsTo(models.LoaiThanhToan, {
+                foreignKey: 'MaLoaiTT',
+                as: 'LoaiThanhToan'
+            });
+            DonHang.hasMany(models.ChiTietDonHang, {
+                foreignKey: 'MADH',
+                as: 'ChiTietDonHangs'
+            });
         }
-    };
+    }
+
     DonHang.init({
         MADH: {
             type: DataTypes.CHAR(10),
             primaryKey: true,
             allowNull: false
         },
-        MAKH: DataTypes.STRING(10),
-        NgayLapDonHang: DataTypes.DATE,
-        DiaChiNhanHang: DataTypes.TEXT,
-        LoiNhan: DataTypes.TEXT,
-        TongTien: DataTypes.FLOAT,
-        TrangThai: DataTypes.BOOLEAN,
-        MALOAITT: DataTypes.STRING(10)
+        MaKH: {
+            type: DataTypes.CHAR(10),
+            allowNull: false
+        },
+        NgayLapDonHang: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        TenKhachHang: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        SDTNhanHang: {
+            type: DataTypes.STRING(11),
+            allowNull: false
+        },
+        DiaChiNhanHang: {
+            type: DataTypes.STRING(255),
+            allowNull: false
+        },
+        LoiNhan: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
+        TongTien: {
+            type: DataTypes.DECIMAL(12, 2),
+            allowNull: false
+        },
+        TrangThai: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
+        },
+        MaLoaiTT: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        DaThanhToan: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
+        MaVanChuyen: {
+            type: DataTypes.STRING(50),
+            allowNull: true
+        }
     }, {
         sequelize,
         modelName: 'DonHang',
+        tableName: 'DonHang'
     });
+
     return DonHang;
 };

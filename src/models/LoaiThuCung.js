@@ -2,32 +2,33 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    class LoaiSanPham extends Model {
+    class LoaiThuCung extends Model {
         static associate(models) {
-            // Quan hệ 1-n với SanPham
-            LoaiSanPham.hasMany(models.SanPham, {
-                foreignKey: 'MaLoaiSP',
-                as: 'SanPhams' // Tên thay thế để truy cập danh sách sản phẩm
+            LoaiThuCung.belongsToMany(models.SanPham, {
+                through: 'SanPhamThuCung',
+                foreignKey: 'MALOAITC',
+                otherKey: 'MASP',
+                as: 'SanPhams'
             });
         }
     }
 
-    LoaiSanPham.init({
-        MALOAISP: {
+    LoaiThuCung.init({
+        MALOAITC: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        TenLoaiSP: {
+        TenLoaiThuCung: {
             type: DataTypes.STRING(50),
             allowNull: false
         }
     }, {
         sequelize,
-        modelName: 'LoaiSanPham',
-        tableName: 'LoaiSanPham'
+        modelName: 'LoaiThuCung',
+        tableName: 'LoaiThuCung'
     });
 
-    return LoaiSanPham;
+    return LoaiThuCung;
 };

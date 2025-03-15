@@ -11,18 +11,27 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            LoaiTaiKhoan.hasMany(models.TaiKhoan, {
+                foreignKey: 'MaLoaiTK', // Khóa ngoại trong bảng TaiKhoan
+                as: 'TaiKhoans'         // Tên thay thế để truy cập danh sách TaiKhoan
+            });
         }
     };
     LoaiTaiKhoan.init({
         MALOAITK: {
-            type: DataTypes.CHAR(10),
+            type: DataTypes.INTEGER,
             primaryKey: true,
-            allowNull: false
+            autoIncrement: true,
+            allowNull: false,
         },
-        TenLoaiTK: DataTypes.STRING(50)
+        TenLoaiTK: {
+            type: DataTypes.STRING(50),
+            allowNull: false,
+        }
     }, {
         sequelize,
         modelName: 'LoaiTaiKhoan',
+        tableName: 'LoaiTaiKhoan',
     });
     return LoaiTaiKhoan;
 };

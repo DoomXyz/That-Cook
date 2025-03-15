@@ -1,52 +1,52 @@
 
-const listImg = document.querySelector('.list-img')
-const images = document.querySelectorAll('.list-img img')
-const btnleft = document.querySelector('.btn-left')
-const btnright = document.querySelector('.btn-right')
+let listImg = document.querySelector('.list-img')
+let images = document.querySelectorAll('.list-img img')
+let btnleft = document.querySelector('.btn-left')
+let btnright = document.querySelector('.btn-right')
 // --------------------------SLIDE-SHOW-------------------------
-let i = 0 
-const changeslide = () => {   
-  if(i == images.length - 1){
-    i=0
-    listImg.style.transform = `translateX(${1500*-1*i}px)`
+let i = 0
+let changeslide = () => {
+  if (i == images.length - 1) {
+    i = 0
+    listImg.style.transform = `translateX(${1500 * -1 * i}px)`
     document.querySelector('.active').classList.remove('active')
-    document.querySelector('.index-item-'+ i).classList.add('active')
-  }else{
-    i++ 
-    listImg.style.transform = `translateX(${1500*-1*i}px)`
+    document.querySelector('.index-item-' + i).classList.add('active')
+  } else {
+    i++
+    listImg.style.transform = `translateX(${1500 * -1 * i}px)`
     document.querySelector('.active').classList.remove('active')
-    document.querySelector('.index-item-'+ i).classList.add('active')
+    document.querySelector('.index-item-' + i).classList.add('active')
   }
 }
-let autochangeslide = setInterval(changeslide,4000)
-btnright.addEventListener('click',() => {
+let autochangeslide = setInterval(changeslide, 4000)
+btnright.addEventListener('click', () => {
   clearInterval(autochangeslide)
   changeslide()
-  autochangeslide = setInterval(changeslide,4000)
+  autochangeslide = setInterval(changeslide, 4000)
 })
-btnleft.addEventListener('click',() => {
+btnleft.addEventListener('click', () => {
   clearInterval(autochangeslide)
-  if(i == 0){
-    i = images.length-1
-    listImg.style.transform = `translateX(${1500*-1*i}px)`
+  if (i == 0) {
+    i = images.length - 1
+    listImg.style.transform = `translateX(${1500 * -1 * i}px)`
     document.querySelector('.active').classList.remove('active')
-    document.querySelector('.index-item-'+ i).classList.add('active')
-  }else{
+    document.querySelector('.index-item-' + i).classList.add('active')
+  } else {
     i--
-    listImg.style.transform = `translateX(${1500*-1*i}px)`
+    listImg.style.transform = `translateX(${1500 * -1 * i}px)`
     document.querySelector('.active').classList.remove('active')
-    document.querySelector('.index-item-'+ i).classList.add('active')
+    document.querySelector('.index-item-' + i).classList.add('active')
   }
-  autochangeslide = setInterval(changeslide,4000)
+  autochangeslide = setInterval(changeslide, 4000)
 })
 
 // --------------------------MENU-CARTEGORY-------------------------
-const itemsliderbar = document.querySelectorAll(".cartegory-left-li")
-itemsliderbar.forEach(function(menu,index){
-  menu.addEventListener("click",function(){
+let itemsliderbar = document.querySelectorAll(".cartegory-left-li")
+itemsliderbar.forEach(function (menu, index) {
+  menu.addEventListener("click", function () {
     event.preventDefault();
-    itemsliderbar.forEach(function(item){
-      if(item != menu){
+    itemsliderbar.forEach(function (item) {
+      if (item != menu) {
         item.classList.remove("block")
       }
     })
@@ -56,8 +56,8 @@ itemsliderbar.forEach(function(menu,index){
 
 
 // --------------------------AD-SLIDE-SHOW-------------------------
-const autoSlideFooter = document.querySelector('.auto-slide-footer');
-const slides = autoSlideFooter.querySelectorAll('.slide');
+let autoSlideFooter = document.querySelector('.auto-slide-footer');
+let slides = autoSlideFooter.querySelectorAll('.slide');
 let currentSlide = 0;
 
 setInterval(() => {
