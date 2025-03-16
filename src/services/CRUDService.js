@@ -9,14 +9,15 @@ let createNewUser = async (data) => {
         try {
             let hashPasswordFromBcrypt = await hashUserPassword(data.Password)
             await db.TaiKhoan.create({
-                MATK: "Test",
+                MATK: "TKAD000000",
                 Email: data.Email,
                 Password: hashPasswordFromBcrypt,
                 HoTen: data.HoTen,
-                GioiTinh: data.GioiTinh === '1' ? true : false,
+                GioiTinh: data.GioiTinh,
                 SDT: data.SDT,
                 DiaChi: data.DiaChi,
-                MALOAITK: data.MALOAITK
+                MaLoaiTK: data.MALOAITK,
+                Khoa: 0
             })
             resolve('Thêm thành công')
         } catch (e) {
@@ -26,10 +27,10 @@ let createNewUser = async (data) => {
 }
 
 let hashUserPassword = (password) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             let salt = bcrypt.genSaltSync(saltRounds);
-            let hashPassword = bcrypt.hashSync(password, salt);
+            let hashPassword = await bcrypt.hashSync(password, salt);
             resolve(hashPassword);
         } catch (e) {
             reject(e);
