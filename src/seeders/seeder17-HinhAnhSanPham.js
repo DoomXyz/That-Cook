@@ -4,17 +4,17 @@ module.exports = {
     up: async (queryInterface, Sequelize) => {
         return queryInterface.bulkInsert('HinhAnhSanPham', [
             // SP00000001: 4 ảnh
-            { MAHINHANH: 1, MASP: 'SP00000001', HinhAnh: 'anh1SP00000001', createdAt: new Date(), updatedAt: new Date() },
-            { MAHINHANH: 2, MASP: 'SP00000001', HinhAnh: 'anh2SP00000001', createdAt: new Date(), updatedAt: new Date() },
+            { MAHINHANH: 1, MASP: 'SP00000001', HinhAnh: 'images/productha/hinhtest.jpg', createdAt: new Date(), updatedAt: new Date() },
+            { MAHINHANH: 2, MASP: 'SP00000001', HinhAnh: 'images/productha/hinhtest1.jpg', createdAt: new Date(), updatedAt: new Date() },
             { MAHINHANH: 3, MASP: 'SP00000001', HinhAnh: 'anh3SP00000001', createdAt: new Date(), updatedAt: new Date() },
             { MAHINHANH: 4, MASP: 'SP00000001', HinhAnh: 'anh4SP00000001', createdAt: new Date(), updatedAt: new Date() },
             // SP00000002: 3 ảnh
-            { MAHINHANH: 5, MASP: 'SP00000002', HinhAnh: 'anh1SP00000002', createdAt: new Date(), updatedAt: new Date() },
-            { MAHINHANH: 6, MASP: 'SP00000002', HinhAnh: 'anh2SP00000002', createdAt: new Date(), updatedAt: new Date() },
+            { MAHINHANH: 5, MASP: 'SP00000002', HinhAnh: 'images/productha/hinhtest3.jpg', createdAt: new Date(), updatedAt: new Date() },
+            { MAHINHANH: 6, MASP: 'SP00000002', HinhAnh: 'images/productha/hinhtest4.jpg', createdAt: new Date(), updatedAt: new Date() },
             { MAHINHANH: 7, MASP: 'SP00000002', HinhAnh: 'anh3SP00000002', createdAt: new Date(), updatedAt: new Date() },
             // SP00000003: 5 ảnh
-            { MAHINHANH: 8, MASP: 'SP00000003', HinhAnh: 'anh1SP00000003', createdAt: new Date(), updatedAt: new Date() },
-            { MAHINHANH: 9, MASP: 'SP00000003', HinhAnh: 'anh2SP00000003', createdAt: new Date(), updatedAt: new Date() },
+            { MAHINHANH: 8, MASP: 'SP00000003', HinhAnh: 'images/productha/hinhtest5.jpg', createdAt: new Date(), updatedAt: new Date() },
+            { MAHINHANH: 9, MASP: 'SP00000003', HinhAnh: 'images/productha/hinhtest6.jpg', createdAt: new Date(), updatedAt: new Date() },
             { MAHINHANH: 10, MASP: 'SP00000003', HinhAnh: 'anh3SP00000003', createdAt: new Date(), updatedAt: new Date() },
             { MAHINHANH: 11, MASP: 'SP00000003', HinhAnh: 'anh4SP00000003', createdAt: new Date(), updatedAt: new Date() },
             { MAHINHANH: 12, MASP: 'SP00000003', HinhAnh: 'anh5SP00000003', createdAt: new Date(), updatedAt: new Date() },

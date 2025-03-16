@@ -1,70 +1,78 @@
-'use strict';
-const { Model } = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-    class SanPham extends Model {
-        static associate(models) {
-            SanPham.belongsTo(models.LoaiSanPham, {
-                foreignKey: 'MaLoaiSP',
-                as: 'LoaiSanPham'
-            });
-            SanPham.hasMany(models.HinhAnhSanPham, {
-                foreignKey: 'MASP',
-                as: 'HinhAnhSanPhams'
-            });
-            SanPham.belongsToMany(models.LoaiThuCung, {
-                through: 'SanPhamThuCung',
-                foreignKey: 'MASP',
-                otherKey: 'MALOAITC',
-                as: 'LoaiThuCungs'
-            });
-            SanPham.hasMany(models.ChiTietSanPham, { // Thêm quan hệ với ChiTietSanPham
-                foreignKey: 'MASP',
-                as: 'ChiTietSanPhams'
-            });
-        }
+  class SanPham extends Model {
+    static associate(models) {
+      SanPham.belongsTo(models.LoaiSanPham, {
+        foreignKey: "MaLoaiSP",
+        as: "LoaiSanPham",
+      });
+      SanPham.hasMany(models.HinhAnhSanPham, {
+        foreignKey: "MASP",
+        as: "HinhAnhSanPhams",
+      });
+      SanPham.belongsToMany(models.LoaiThuCung, {
+        through: "SanPhamThuCung",
+        foreignKey: "MASP",
+        otherKey: "MALOAITC",
+        as: "LoaiThuCungs",
+      });
+      SanPham.hasMany(models.ChiTietSanPham, {
+        foreignKey: "MASP",
+        as: "ChiTietSanPhams",
+      });
     }
+  }
 
-    SanPham.init({
-        MASP: {
-            type: DataTypes.CHAR(10),
-            primaryKey: true,
-            allowNull: false
-        },
-        TenSanPham: {
-            type: DataTypes.STRING(100),
-            allowNull: false
-        },
-        SoLuongTon: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        KhuyenMai: {
-            type: DataTypes.DECIMAL(5, 2),
-            allowNull: true
-        },
-        GiaBan: {
-            type: DataTypes.DECIMAL(10, 2),
-            allowNull: false
-        },
-        TinhTrang: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        MoTa: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        },
-        MaLoaiSP: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        }
-    }, {
-        sequelize,
-        modelName: 'SanPham',
-        tableName: 'SanPham',
-        timestamps: true // Thêm timestamps để đồng bộ với yêu cầu thực tế
-    });
+  SanPham.init(
+    {
+      MASP: {
+        type: DataTypes.CHAR(10),
+        primaryKey: true,
+        allowNull: false,
+      },
+      TenSanPham: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+      },
+      SoLuongTon: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      KhuyenMai: {
+        type: DataTypes.DECIMAL(5, 2),
+        allowNull: true,
+      },
+      GiaBan: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
+      TinhTrang: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      MoTa: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      HinhAnh: {
+        // Thêm trường HinhAnh
+        type: DataTypes.STRING(255),
+        allowNull: true,
+      },
+      MaLoaiSP: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+    },
+    {
+      sequelize,
+      modelName: "SanPham",
+      tableName: "SanPham",
+      timestamps: true,
+    }
+  );
 
-    return SanPham;
+  return SanPham;
 };
