@@ -1,5 +1,8 @@
+-------------Hướng dẫn reset database-------------
 vào myphpadmin chọn thatcookdb và xóa đi
-tạo lại thatcookdb
-mở ctrl+` chạy lệnh
+tạo lại database đặt tên = thatcookdb
+mở ctrl + ` chạy các lệnh dưới
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
+nếu chạy xong 2 lệnh trên vẫn ko ổn thì chạy lên dưới rồi chạy lại lên 4 và 5
+npx sequelize-cli db:migrate:undo:all

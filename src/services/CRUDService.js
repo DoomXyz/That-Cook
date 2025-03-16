@@ -16,7 +16,7 @@ let createNewUser = async (data) => {
                 GioiTinh: data.GioiTinh,
                 SDT: data.SDT,
                 DiaChi: data.DiaChi,
-                MaLoaiTK: data.MALOAITK,
+                MaLoaiTK: 1,
                 Khoa: 0
             })
             resolve('Thêm thành công')

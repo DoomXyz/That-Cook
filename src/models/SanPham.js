@@ -57,9 +57,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       HinhAnh: {
-        // Thêm trường HinhAnh
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: false,
       },
       MaLoaiSP: {
         type: DataTypes.INTEGER,

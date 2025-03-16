@@ -11,7 +11,7 @@ module.exports = {
         GiaBan: 650000.0,
         TinhTrang: true,
         MoTa: "Thức ăn khô dành cho chó trưởng thành giống nhỏ, hỗ trợ tiêu hóa và sức khỏe răng miệng.",
-        HinhAnh: "images/productha/hinhtest.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest.jpg",
         MaLoaiSP: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -24,7 +24,7 @@ module.exports = {
         GiaBan: 22000.0,
         TinhTrang: true,
         MoTa: "Thức ăn ướt dạng pate, bổ sung vitamin và khoáng chất cho mèo mọi lứa tuổi.",
-        HinhAnh: "anh1SP00000002.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest1.jpg",
         MaLoaiSP: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -37,7 +37,7 @@ module.exports = {
         GiaBan: 45000.0,
         TinhTrang: true,
         MoTa: "Snack vị catnip giúp mèo thư giãn và tăng cường tương tác.",
-        HinhAnh: "anh1SP00000003.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest2.jpg",
         MaLoaiSP: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -50,7 +50,7 @@ module.exports = {
         GiaBan: 280000.0,
         TinhTrang: true,
         MoTa: "Thức ăn khô cho mèo trưởng thành, hỗ trợ sức khỏe lông và hệ miễn dịch.",
-        HinhAnh: "anh1SP00000004.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest3.jpg",
         MaLoaiSP: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -63,7 +63,7 @@ module.exports = {
         GiaBan: 480000.0,
         TinhTrang: true,
         MoTa: "Thức ăn khô vị bò cho chó trưởng thành, tăng cường cơ bắp và xương chắc khỏe.",
-        HinhAnh: "anh1SP00000005.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest4.jpg",
         MaLoaiSP: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -76,7 +76,7 @@ module.exports = {
         GiaBan: 95000.0,
         TinhTrang: true,
         MoTa: "Vòng cổ da cao cấp, bền đẹp, phù hợp cho cả chó và mèo.",
-        HinhAnh: "anh1SP00000006.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest5.jpg",
         MaLoaiSP: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -89,7 +89,7 @@ module.exports = {
         GiaBan: 75000.0,
         TinhTrang: true,
         MoTa: "Dây dắt nylon chắc chắn, dài 1.5m, phù hợp dắt chó đi dạo.",
-        HinhAnh: "anh1SP00000007.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest6.jpg",
         MaLoaiSP: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -102,7 +102,7 @@ module.exports = {
         GiaBan: 85000.0,
         TinhTrang: true,
         MoTa: "Bát đôi inox không gỉ, tiện lợi cho cả thức ăn và nước.",
-        HinhAnh: "anh1SP00000008.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest7.jpg",
         MaLoaiSP: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -115,7 +115,7 @@ module.exports = {
         GiaBan: 1250000.0,
         TinhTrang: true,
         MoTa: "Nhà cây 3 tầng cho mèo, có trụ cào móng và chỗ nghỉ ngơi.",
-        HinhAnh: "anh1SP00000009.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest8.jpg",
         MaLoaiSP: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -128,7 +128,7 @@ module.exports = {
         GiaBan: 65000.0,
         TinhTrang: true,
         MoTa: "Lược 2 mặt tiện dụng, giúp loại bỏ lông rụng và làm mượt lông.",
-        HinhAnh: "anh1SP00000010.jpg", // Thêm ảnh
+        HinhAnh: "images/productha/hinhtest.jpg",
         MaLoaiSP: 2,
         createdAt: new Date(),
         updatedAt: new Date(),

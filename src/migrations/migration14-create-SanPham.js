@@ -35,9 +35,8 @@ module.exports = {
           allowNull: true,
         },
         HinhAnh: {
-          // Thêm trường HinhAnh
           type: Sequelize.STRING(255),
-          allowNull: true,
+          allowNull: false,
         },
         MaLoaiSP: {
           type: Sequelize.INTEGER,
