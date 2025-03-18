@@ -1,68 +1,46 @@
-<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký</title>
-    <link rel="stylesheet" href="stylesheet/Home.css">
-</head>
-
-<body
-    style="background: url('images/backgroundimgs/background1.jpg'); background-size: cover; background-repeat: no-repeat;">
-    <div class="containers">
-        <p>ĐĂNG KÍ TÀI KHOẢN</p>
-        <form action="/post-crud" method="POST">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="Email">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Mật khẩu</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Nhập mât khẩu"
-                        name="Password">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Họ Tên</label>
-                    <input type="text" class="form-control" placeholder="Nhập họ tên" name="HoTen">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Xác nhận mật khẩu</label>
-                    <input type="password" class="form-control" id="confirmPassword4" placeholder="Xác nhận mật hàng">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputAddress">Địa chỉ</label>
-                    <input type="text" class="form-control" name="DiaChi">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Điện thoại</label>
-                    <input type="text" class="form-control" placeholder="Nhập số diện thoại" name="SDT">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputState">Giới tính</label>
-                    <select name="GioiTinh" class="form-control">
-                        <option value="1">Nam</option>
-                        <option value="2">Nữ</option>
-                        <option value="3">Khác</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-6">
-
-                </div>
-
-            </div>
-            <button type="submit" class="btn btn-primary">Đăng ký</button>
+  <!-- visit www.codebyrolex.com  -->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="stylesheet/Register.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <body>
+      <section>
+        <form>
+          <h1>ĐĂNG NHẬP</h1>
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" required />
+            <label for="">Email</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" required />
+            <label for="">Mật khẩu</label>
+          </div>
+          <div class="forget">
+            <label for=""><input type="checkbox" />Ghi nhớ</label>
+            <a href="#">Quên Mật khẩu</a>
+          </div>
+          <button>Log in</button>
+          <div class="register">
+            <p>Không có tài khoản <a href="#">Đăng kí ngay</a></p>
+          </div>
         </form>
-        <div class="register-logo"><img src="images/icon/Pet Accessories & Food.png" alt=""></div>
-    </div>
-</body>
-
+      </section>
+    </body>
+    <!-- partial -->
+  </body>
 </html>
