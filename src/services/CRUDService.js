@@ -9,7 +9,7 @@ let createNewUser = async (data) => {
         try {
             let hashPasswordFromBcrypt = await hashUserPassword(data.Password)
             await db.TaiKhoan.create({
-                MATK: "TKAD000000",
+                MATK: "TKAD000011",
                 Email: data.Email,
                 Password: hashPasswordFromBcrypt,
                 HoTen: data.HoTen,
@@ -27,10 +27,13 @@ let createNewUser = async (data) => {
 }
 
 let hashUserPassword = (password) => {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
         try {
+            if (!password || typeof password !== 'string') {
+                throw new Error('Invalid password');
+            }
             let salt = bcrypt.genSaltSync(saltRounds);
-            let hashPassword = await bcrypt.hashSync(password, salt);
+            let hashPassword = bcrypt.hashSync(password, salt);
             resolve(hashPassword);
         } catch (e) {
             reject(e);

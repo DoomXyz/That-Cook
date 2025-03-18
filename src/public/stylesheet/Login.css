@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-/* visit www.codebyrolex.com */
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -11,8 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background-image: url(https://user-images.githubusercontent.com/13468728/233847739-219cb494-c265-4554-820a-bd3424c59065.jpg); */
-  background-image: url(https://t4.ftcdn.net/jpg/01/91/60/21/360_F_191602143_B0KQT0rQi8vkxa3hRSSjANAfnhyC3zL4.jpg);
+  background-image: url("https://i.imgur.com/RlCfwMn.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -20,7 +19,6 @@ body {
 
 section {
   position: relative;
-
   background-color: transparent;
   border: 2px solid rgba(84, 76, 76, 0.5);
   border-radius: 20px;
@@ -39,10 +37,15 @@ h1 {
 
 .inputbox {
   position: relative;
-  margin: 30px 0;
-  max-width: 310px;
+  margin: 40px 15px;
   border-bottom: 2px solid #565151;
   color: #565151;
+}
+
+/* Khi có dữ liệu hoặc hover, viền đổi màu */
+.inputbox:hover,
+.inputbox:has(input:not(:placeholder-shown)) {
+  border-bottom: 2px solid #333;
 }
 
 .inputbox label {
@@ -56,21 +59,51 @@ h1 {
   transition: all 0.5s ease-in-out;
 }
 
-input:focus ~ label,
-input:valid ~ label {
+/* Khi có dữ liệu hoặc hover, nhãn di chuyển lên */
+.inputbox input:not(:placeholder-shown)~label,
+.inputbox:hover label {
   top: -5px;
+  color: #333;
 }
 
 .inputbox input {
   width: 100%;
+  max-width: 300px;
   height: 60px;
   background: transparent;
   border: none;
-  max-width: 310px;
   outline: none;
   font-size: 1rem;
-  padding: 0 35px 0 5px;
+  padding: 0 50px 0 5px;
+  /* Giữ padding-right để dành chỗ cho icon */
   color: #565151;
+  margin-bottom: -15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Ghi đè autofill cho input (trừ password nếu cần) */
+.inputbox input:not([type="password"]):-webkit-autofill,
+.inputbox input:not([type="password"]):-webkit-autofill:hover,
+.inputbox input:not([type="password"]):-webkit-autofill:focus,
+.inputbox input:not([type="password"]):-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #565151 !important;
+  border: none !important;
+  background: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
+.inputbox input:not([type="password"]):-webkit-autofill~label {
+  top: -5px;
+  color: #333;
+}
+
+.inputbox input:not([type="password"]):-webkit-autofill~ion-icon {
+  color: #333;
 }
 
 .inputbox ion-icon {
@@ -81,12 +114,32 @@ input:valid ~ label {
   top: 20px;
 }
 
+/* Khi có dữ liệu hoặc hover, biểu tượng đổi màu */
+.inputbox input:not(:placeholder-shown)~ion-icon,
+.inputbox:hover ion-icon {
+  color: #333;
+}
+
+/* Thêm hiệu ứng hover cho icon mắt */
+.inputbox ion-icon[name="eye-off-outline"],
+.inputbox ion-icon[name="eye-outline"] {
+  cursor: pointer;
+  /* Chỉ áp dụng cursor cho icon mắt */
+}
+
+.inputbox ion-icon[name="eye-off-outline"]:hover,
+.inputbox ion-icon[name="eye-outline"]:hover {
+  color: #333;
+}
+
 .forget {
-  margin: 35px 0;
+  margin: 45px 0;
   font-size: 0.85rem;
   color: #565151;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* Canh giữa theo chiều dọc */
 }
 
 .forget label {
@@ -96,12 +149,33 @@ input:valid ~ label {
 
 .forget label input {
   margin-right: 3px;
+  cursor: pointer;
+  /* Thêm cursor cho checkbox */
+  vertical-align: middle;
+  /* Canh giữa checkbox với văn bản */
+  height: 18px;
+  /* Tăng chiều cao của checkbox */
+  width: px;
+  /* Tăng chiều rộng để cân đối */
+}
+
+.forget label span {
+  font-size: 0.85rem;
+  /* Đảm bảo kích thước chữ "Ghi nhớ" bằng "Quên Mật khẩu" */
+  line-height: 1;
+  /* Điều chỉnh chiều cao dòng */
+  vertical-align: middle;
+  /* Canh giữa văn bản với checkbox */
 }
 
 .forget a {
   color: #565151;
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.85rem;
+  /* Đảm bảo kích thước chữ "Quên Mật khẩu" */
+  line-height: 1;
+  /* Điều chỉnh chiều cao dòng */
 }
 
 .forget a:hover {
@@ -109,7 +183,12 @@ input:valid ~ label {
 }
 
 button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  display: block;
   width: 100%;
+  max-width: 200px;
   height: 40px;
   border-radius: 40px;
   background-color: rgb(255, 255, 255, 1);
@@ -123,16 +202,14 @@ button {
 
 button:hover {
   background-color: #565151;
-  p {
-    color: white;
-  }
+  color: rgb(255, 255, 255);
 }
 
 .login {
   font-size: 0.9rem;
   color: #565151;
   text-align: center;
-  margin: 25px 0 10px;
+  margin: 35px 0 10px;
 }
 
 .login p a {

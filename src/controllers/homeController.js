@@ -11,7 +11,11 @@ let getHomePage = async (req, res) => {
 }
 
 let userRegister = (req, res) => {
-    return res.render('register.ejs');
+    return res.render('Register');
+}
+
+let getLogin = (req, res) => {
+    return res.render('Login');
 }
 
 let saveTodb = async (req, res) => {
@@ -76,4 +80,5 @@ module.exports = {
     updateTodb: updateTodb,
     deleteFromdb: deleteFromdb,
     sanphamShow: sanphamShow,
+    getLogin: getLogin,
 }

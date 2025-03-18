@@ -1,21 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-/* visit www.codebyrolex.com */
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
+
 .R1 {
   display: flex;
   margin-bottom: -10px;
 }
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background-image: url(https://user-images.githubusercontent.com/13468728/233847739-219cb494-c265-4554-820a-bd3424c59065.jpg); */
-  background-image: url(https://t4.ftcdn.net/jpg/01/91/60/21/360_F_191602143_B0KQT0rQi8vkxa3hRSSjANAfnhyC3zL4.jpg);
+  background-image: url("https://i.imgur.com/RlCfwMn.jpeg");
+  /* https://t4.ftcdn.net/jpg/01/91/60/21/360_F_191602143_B0KQT0rQi8vkxa3hRSSjANAfnhyC3zL4.jpg */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -33,25 +35,29 @@ section {
   padding: 2rem 3rem;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #565151;
-  text-align: center;
-}
 section .login {
   display: flex;
   justify-content: center;
   margin-top: 15px;
 }
+
 section .login a {
   margin-left: 5px;
   text-decoration: none;
   color: #565151;
   font-weight: bold;
 }
+
 section .login a:hover {
   text-decoration: underline;
 }
+
+h1 {
+  font-size: 2rem;
+  color: #565151;
+  text-align: center;
+}
+
 .inputbox {
   position: relative;
   margin: 30px 15px;
@@ -59,12 +65,116 @@ section .login a:hover {
   color: #565151;
 }
 
+/* Khi có dữ liệu hoặc hover, viền đổi màu */
+.inputbox:hover,
+.inputbox input:not(:placeholder-shown)~.inputbox {
+  border-bottom: 2px solid #333;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #565151;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Khi có dữ liệu hoặc hover, nhãn di chuyển lên */
+.inputbox input:not(:placeholder-shown)~label,
+.inputbox:hover label {
+  top: -5px;
+  color: #333;
+}
+
+.inputbox input {
+  width: 100%;
+  max-width: 200px;
+  height: 60px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+  color: #565151;
+  margin-bottom: -15px;
+}
+
+/* Ghi đè autofill cho input (trừ password nếu cần) */
+.inputbox input:not([type="password"]):-webkit-autofill,
+.inputbox input:not([type="password"]):-webkit-autofill:hover,
+.inputbox input:not([type="password"]):-webkit-autofill:focus,
+.inputbox input:not([type="password"]):-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #565151 !important;
+  border: none !important;
+  background: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+  /* Ngăn nhấp nháy */
+}
+
+/* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
+.inputbox input:not([type="password"]):-webkit-autofill~label {
+  top: -5px;
+  color: #333;
+}
+
+.inputbox input:not([type="password"]):-webkit-autofill~ion-icon {
+  color: #333;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #565151;
+  font-size: 1.2rem;
+  top: 20px;
+}
+
+/* Khi có dữ liệu hoặc hover, biểu tượng đổi màu */
+.inputbox input:not(:placeholder-shown)~ion-icon,
+.inputbox:hover ion-icon {
+  color: #333;
+}
+
+/* Thêm cursor cho icon mắt */
+.inputbox ion-icon[name="eye-outline"],
+.inputbox ion-icon[name="eye-off-outline"] {
+  cursor: pointer;
+  /* Áp dụng cursor cho cả hai icon mắt */
+}
+
+.inputbox ion-icon[name="eye-outline"]:hover,
+.inputbox ion-icon[name="eye-off-outline"]:hover {
+  color: #333;
+}
+
+/* Định dạng thông báo lỗi (đổi lại thành màu đỏ) */
+.inputbox .error-message {
+  display: none;
+  font-size: 0.7rem;
+  color: #ff0000;
+  /* Đặt lại màu đỏ như hình gốc */
+  margin-top: 5px;
+  position: absolute;
+  bottom: -25px;
+  left: 5px;
+}
+
+.address .inputbox input {
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+}
+
 .selectbox {
   position: relative;
   margin-top: 51.4px;
-  color: #565151;
   margin-left: 15px;
   margin-right: 15px;
+  color: #565151;
 }
 
 .selectbox label {
@@ -82,54 +192,34 @@ section .login a:hover {
 
 .selectbox select {
   width: 100%;
-  width: 242px;
-  border: none;
-  border-bottom: 2px solid #565151;
-  background: transparent;
-  margin-bottom: -15px;
-}
-
-.inputbox label {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  color: #565151;
-  font-size: 1rem;
-  pointer-events: none;
-  transition: all 0.5s ease-in-out;
-}
-
-input:focus ~ label,
-input:valid ~ label {
-  top: -5px;
-}
-
-.inputbox input {
-  width: 100%;
   max-width: 200px;
   height: 60px;
   background: transparent;
   border: none;
-  outline: none;
-  font-size: 1rem;
-  padding: 0 35px 0 5px;
-  color: #565151;
+  border-bottom: 2px solid #565151;
   margin-bottom: -15px;
 }
 
-.address .inputbox input {
-  align-items: center;
-  justify-content: center;
-  width: 350px;
+/* Ghi đè autofill cho select */
+.selectbox select:-webkit-autofill,
+.selectbox select:-webkit-autofill:hover,
+.selectbox select:-webkit-autofill:focus,
+.selectbox select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #565151 !important;
+  border: none !important;
+  background: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-.inputbox ion-icon {
-  position: absolute;
-  right: 8px;
-  color: #565151;
-  font-size: 1.2rem;
-  top: 20px;
+/* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
+.selectbox select:-webkit-autofill~label {
+  top: -7px;
+  color: #333;
+}
+
+.selectbox select:-webkit-autofill~ion-icon {
+  color: #333;
 }
 
 button {
@@ -149,7 +239,54 @@ button {
 
 button:hover {
   background-color: #565151;
-  p {
-    color: white;
-  }
+}
+
+button:hover p {
+  color: rgb(255, 255, 255);
+}
+
+.selectbox {
+  position: relative;
+  margin: 30px 15px;
+  border-bottom: 2px solid #565151;
+  color: #565151;
+  width: 230px;
+}
+
+.selectbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #565151;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  top: -7px;
+}
+
+.selectbox select {
+  width: 100%;
+  max-width: 200px;
+  height: 60px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+  color: #565151;
+  appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Đổi màu biểu tượng khi autofill (đã di chuyển lên trên) */
+.selectbox ion-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #565151;
+  pointer-events: none;
 }
