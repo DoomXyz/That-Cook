@@ -5,10 +5,7 @@
   padding: 0;
   font-family: "poppins", sans-serif;
 }
-.R1 {
-  display: flex;
-  margin-bottom: -10px;
-}
+
 body {
   display: flex;
   align-items: center;
@@ -23,6 +20,7 @@ body {
 
 section {
   position: relative;
+
   background-color: transparent;
   border: 2px solid rgba(84, 76, 76, 0.5);
   border-radius: 20px;
@@ -38,55 +36,13 @@ h1 {
   color: #565151;
   text-align: center;
 }
-section .login {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-}
-section .login a {
-  margin-left: 5px;
-  text-decoration: none;
-  color: #565151;
-  font-weight: bold;
-}
-section .login a:hover {
-  text-decoration: underline;
-}
+
 .inputbox {
   position: relative;
-  margin: 30px 15px;
+  margin: 30px 0;
+  max-width: 310px;
   border-bottom: 2px solid #565151;
   color: #565151;
-}
-
-.selectbox {
-  position: relative;
-  margin-top: 51.4px;
-  color: #565151;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.selectbox label {
-  position: absolute;
-  top: -70%;
-  font-size: 1rem;
-}
-
-.selectbox ion-icon {
-  position: absolute;
-  top: -35%;
-  right: 8px;
-  font-size: 1.2rem;
-}
-
-.selectbox select {
-  width: 100%;
-  width: 242px;
-  border: none;
-  border-bottom: 2px solid #565151;
-  background: transparent;
-  margin-bottom: -15px;
 }
 
 .inputbox label {
@@ -107,21 +63,14 @@ input:valid ~ label {
 
 .inputbox input {
   width: 100%;
-  max-width: 200px;
   height: 60px;
   background: transparent;
   border: none;
+  max-width: 310px;
   outline: none;
   font-size: 1rem;
   padding: 0 35px 0 5px;
   color: #565151;
-  margin-bottom: -15px;
-}
-
-.address .inputbox input {
-  align-items: center;
-  justify-content: center;
-  width: 350px;
 }
 
 .inputbox ion-icon {
@@ -132,10 +81,35 @@ input:valid ~ label {
   top: 20px;
 }
 
+.forget {
+  margin: 35px 0;
+  font-size: 0.85rem;
+  color: #565151;
+  display: flex;
+  justify-content: space-between;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label input {
+  margin-right: 3px;
+}
+
+.forget a {
+  color: #565151;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forget a:hover {
+  text-decoration: underline;
+}
+
 button {
-  margin-left: 172px;
   width: 100%;
-  max-width: 200px;
   height: 40px;
   border-radius: 40px;
   background-color: rgb(255, 255, 255, 1);
@@ -152,4 +126,21 @@ button:hover {
   p {
     color: white;
   }
+}
+
+.login {
+  font-size: 0.9rem;
+  color: #565151;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.login p a {
+  text-decoration: none;
+  color: #565151;
+  font-weight: 600;
+}
+
+.login p a:hover {
+  text-decoration: underline;
 }

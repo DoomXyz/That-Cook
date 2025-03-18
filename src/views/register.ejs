@@ -12,31 +12,65 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <link rel="stylesheet" href="stylesheet/Register.css" />
+    <link rel="stylesheet" href="/stylesheet/Register.css" />
   </head>
   <body>
     <!-- partial:index.partial.html -->
     <body>
       <section>
         <form>
-          <h1>ĐĂNG NHẬP</h1>
-          <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-            <input type="email" required />
-            <label for="">Email</label>
+          <h1>ĐĂNG KÝ</h1>
+          <div class="R1">
+            <div class="inputbox">
+              <ion-icon name="person"></ion-icon>
+              <input type="tel" required />
+              <label for="">Họ Tên</label>
+            </div>
+            <div class="inputbox">
+              <ion-icon name="call"></ion-icon>
+              <input type="text" required />
+              <label for="">Số điện thoại</label>
+            </div>
           </div>
-          <div class="inputbox">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" required />
-            <label for="">Mật khẩu</label>
+          <div class="R1">
+            <div class="inputbox">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input type="email" required />
+              <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input type="password" required />
+              <label for="">Mật khẩu</label>
+            </div>
           </div>
-          <div class="forget">
-            <label for=""><input type="checkbox" />Ghi nhớ</label>
-            <a href="#">Quên Mật khẩu</a>
+          <div class="R1">
+            <div class="selectbox">
+              <label for="">Giới tính</label>
+              <select name="GioiTinh">
+                <option value="1">Nam</option>
+                <option value="2">Nữ</option>
+                <option value="3">Khác</option>
+              </select>
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <div class="inputbox">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input type="password" required />
+              <label for="">Xác nhận mật khẩu</label>
+            </div>
           </div>
-          <button>Log in</button>
-          <div class="register">
-            <p>Không có tài khoản <a href="#">Đăng kí ngay</a></p>
+          <div class="address">
+            <div class="inputbox">
+              <ion-icon name="location"></ion-icon>
+              <input type="text" required />
+              <label for="">Địa chỉ</label>
+            </div>
+          </div>
+          <button><p>Đăng ký</p></button>
+          <div class="login">
+            <p>Đã có tài khoản?</p>
+            <a href="">Đăng nhập</a>
           </div>
         </form>
       </section>
