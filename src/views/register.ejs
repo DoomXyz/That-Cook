@@ -1,115 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="/stylesheet/Register.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Register</title>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="/stylesheet/Register.css" />
-</head>
+  <body>
+    <section>
+      <form action="/post-crud" method="POST" id="registerForm">
+        <div class="home">
+          <a href="http://localhost:8080/"><ion-icon name="home"></ion-icon></a>
+        </div>
+        <h1>ĐĂNG KÝ</h1>
+        <div class="R1">
+          <div class="inputbox">
+            <ion-icon name="person"></ion-icon>
+            <input type="text" placeholder="" name="HoTen" required />
+            <label>Họ Tên</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="call"></ion-icon>
+            <input type="tel" placeholder="" name="SDT" required />
+            <label>Số điện thoại</label>
+          </div>
+        </div>
+        <div class="R1">
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" placeholder="" required name="Email" />
+            <label>Email</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="eye-off-outline" id="togglePassword"></ion-icon>
+            <input
+              type="password"
+              placeholder=""
+              name="Password"
+              id="password"
+              required
+            />
+            <label>Mật khẩu</label>
+          </div>
+        </div>
+        <div class="R1">
+          <div class="selectbox">
+            <label>Giới tính</label>
+            <select name="GioiTinh">
+              <option value="1">Nam</option>
+              <option value="2">Nữ</option>
+              <option value="3">Khác</option>
+            </select>
+            <ion-icon name="person-outline"></ion-icon>
+          </div>
+          <div class="inputbox">
+            <ion-icon
+              name="eye-off-outline"
+              id="toggleConfirmPassword"
+            ></ion-icon>
+            <input
+              type="password"
+              placeholder=""
+              id="confirmPassword"
+              required
+            />
+            <label>Xác nhận mật khẩu</label>
+            <span id="passwordMismatch" class="error-message"></span>
+          </div>
+        </div>
+        <div class="address">
+          <div class="inputbox">
+            <ion-icon name="location"></ion-icon>
+            <input type="text" placeholder="" name="DiaChi" required />
+            <label>Địa chỉ</label>
+          </div>
+        </div>
+        <button type="submit" id="registerButton">Đăng ký</button>
+        <div class="login">
+          <p>Đã có tài khoản?</p>
+          <a href="http://localhost:8080/login">Đăng nhập</a>
+        </div>
+      </form>
+    </section>
 
-<body>
-  <section>
-    <form action="/post-crud" method="POST" id="registerForm">
-      <h1>ĐĂNG KÝ</h1>
-      <div class="R1">
-        <div class="inputbox">
-          <ion-icon name="person"></ion-icon>
-          <input type="text" placeholder="" name="HoTen" required />
-          <label>Họ Tên</label>
-        </div>
-        <div class="inputbox">
-          <ion-icon name="call"></ion-icon>
-          <input type="tel" placeholder="" name="SDT" required />
-          <label>Số điện thoại</label>
-        </div>
-      </div>
-      <div class="R1">
-        <div class="inputbox">
-          <ion-icon name="mail-outline"></ion-icon>
-          <input type="email" placeholder="" required name="Email" />
-          <label>Email</label>
-        </div>
-        <div class="inputbox">
-          <ion-icon name="eye-off-outline" id="togglePassword"></ion-icon>
-          <input type="password" placeholder="" name="Password" id="password" required />
-          <label>Mật khẩu</label>
-        </div>
-      </div>
-      <div class="R1">
-        <div class="selectbox">
-          <label>Giới tính</label>
-          <select name="GioiTinh">
-            <option value="1">Nam</option>
-            <option value="2">Nữ</option>
-            <option value="3">Khác</option>
-          </select>
-          <ion-icon name="person-outline"></ion-icon>
-        </div>
-        <div class="inputbox">
-          <ion-icon name="eye-off-outline" id="toggleConfirmPassword"></ion-icon>
-          <input type="password" placeholder="" id="confirmPassword" required />
-          <label>Xác nhận mật khẩu</label>
-          <span id="passwordMismatch" class="error-message"></span>
-        </div>
-      </div>
-      <div class="address">
-        <div class="inputbox">
-          <ion-icon name="location"></ion-icon>
-          <input type="text" placeholder="" name="DiaChi" required />
-          <label>Địa chỉ</label>
-        </div>
-      </div>
-      <button type="submit" id="registerButton">Đăng ký</button>
-      <div class="login">
-        <p>Đã có tài khoản?</p>
-        <a href="">Đăng nhập</a>
-      </div>
-    </form>
-  </section>
+    <!-- Thêm JavaScript -->
+    <script>
+      // Lấy các phần tử
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+      const mismatchMessage = document.getElementById("passwordMismatch");
+      const registerButton = document.getElementById("registerButton");
+      const togglePassword = document.getElementById("togglePassword");
+      const toggleConfirmPassword = document.getElementById(
+        "toggleConfirmPassword"
+      );
 
-  <!-- Thêm JavaScript -->
-  <script>
-    // Lấy các phần tử
-    const passwordInput = document.getElementById("password");
-    const confirmPasswordInput = document.getElementById("confirmPassword");
-    const mismatchMessage = document.getElementById("passwordMismatch");
-    const registerButton = document.getElementById("registerButton");
-    const togglePassword = document.getElementById("togglePassword");
-    const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
-
-    // Hàm kiểm tra sự khớp nhau
-    function checkPasswords() {
-      if (passwordInput.value !== confirmPasswordInput.value && confirmPasswordInput.value !== "") {
-        mismatchMessage.textContent = "Mật khẩu không khớp!";
-        mismatchMessage.style.display = "block";
-        registerButton.disabled = true;
-      } else {
-        mismatchMessage.textContent = "";
-        mismatchMessage.style.display = "none";
-        registerButton.disabled = false;
+      // Hàm kiểm tra sự khớp nhau
+      function checkPasswords() {
+        if (
+          passwordInput.value !== confirmPasswordInput.value &&
+          confirmPasswordInput.value !== ""
+        ) {
+          mismatchMessage.textContent = "Mật khẩu không khớp!";
+          mismatchMessage.style.display = "block";
+          registerButton.disabled = true;
+        } else {
+          mismatchMessage.textContent = "";
+          mismatchMessage.style.display = "none";
+          registerButton.disabled = false;
+        }
       }
-    }
 
-    // Hàm toggle mật khẩu
-    function togglePasswordVisibility(input, icon) {
-      const type = input.getAttribute("type") === "password" ? "text" : "password";
-      input.setAttribute("type", type);
-      icon.setAttribute("name", type === "password" ? "eye-off-outline" : "eye-outline");
-    }
+      // Hàm toggle mật khẩu
+      function togglePasswordVisibility(input, icon) {
+        const type =
+          input.getAttribute("type") === "password" ? "text" : "password";
+        input.setAttribute("type", type);
+        icon.setAttribute(
+          "name",
+          type === "password" ? "eye-off-outline" : "eye-outline"
+        );
+      }
 
-    // Lắng nghe sự kiện nhấp vào biểu tượng mắt
-    togglePassword.addEventListener("click", () => togglePasswordVisibility(passwordInput, togglePassword));
-    toggleConfirmPassword.addEventListener("click", () => togglePasswordVisibility(confirmPasswordInput, toggleConfirmPassword));
+      // Lắng nghe sự kiện nhấp vào biểu tượng mắt
+      togglePassword.addEventListener("click", () =>
+        togglePasswordVisibility(passwordInput, togglePassword)
+      );
+      toggleConfirmPassword.addEventListener("click", () =>
+        togglePasswordVisibility(confirmPasswordInput, toggleConfirmPassword)
+      );
 
-    // Lắng nghe sự thay đổi trên cả hai trường
-    passwordInput.addEventListener("input", checkPasswords);
-    confirmPasswordInput.addEventListener("input", checkPasswords);
+      // Lắng nghe sự thay đổi trên cả hai trường
+      passwordInput.addEventListener("input", checkPasswords);
+      confirmPasswordInput.addEventListener("input", checkPasswords);
 
-    // Kiểm tra khi trang được tải
-    window.addEventListener("load", checkPasswords);
-  </script>
-</body>
-
+      // Kiểm tra khi trang được tải
+      window.addEventListener("load", checkPasswords);
+    </script>
+  </body>
 </html>

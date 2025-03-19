@@ -26,7 +26,7 @@ body {
 section {
   position: relative;
   background-color: transparent;
-  border: 2px solid rgba(84, 76, 76, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   backdrop-filter: blur(70px);
   display: flex;
@@ -44,7 +44,7 @@ section .login {
 section .login a {
   margin-left: 5px;
   text-decoration: none;
-  color: #565151;
+  color: white;
   font-weight: bold;
 }
 
@@ -54,7 +54,7 @@ section .login a:hover {
 
 h1 {
   font-size: 2rem;
-  color: #565151;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -62,12 +62,12 @@ h1 {
   position: relative;
   margin: 30px 15px;
   border-bottom: 2px solid #565151;
-  color: #565151;
+  color: #ffffff;
 }
 
 /* Khi có dữ liệu hoặc hover, viền đổi màu */
 .inputbox:hover,
-.inputbox input:not(:placeholder-shown)~.inputbox {
+.inputbox input:not(:placeholder-shown) ~ .inputbox {
   border-bottom: 2px solid #333;
 }
 
@@ -76,17 +76,17 @@ h1 {
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  color: #565151;
+  color: #ffffff;
   font-size: 1rem;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
 }
 
 /* Khi có dữ liệu hoặc hover, nhãn di chuyển lên */
-.inputbox input:not(:placeholder-shown)~label,
+.inputbox input:not(:placeholder-shown) ~ label,
 .inputbox:hover label {
   top: -5px;
-  color: #333;
+  color: #565151;
 }
 
 .inputbox input {
@@ -98,7 +98,7 @@ h1 {
   outline: none;
   font-size: 1rem;
   padding: 0 35px 0 5px;
-  color: #565151;
+  color: #ffffff;
   margin-bottom: -15px;
 }
 
@@ -116,27 +116,27 @@ h1 {
 }
 
 /* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
-.inputbox input:not([type="password"]):-webkit-autofill~label {
+.inputbox input:not([type="password"]):-webkit-autofill ~ label {
   top: -5px;
-  color: #333;
+  color: #565151;
 }
 
-.inputbox input:not([type="password"]):-webkit-autofill~ion-icon {
-  color: #333;
+.inputbox input:not([type="password"]):-webkit-autofill ~ ion-icon {
+  color: #565151;
 }
 
 .inputbox ion-icon {
   position: absolute;
   right: 8px;
-  color: #565151;
+  color: #ffffff;
   font-size: 1.2rem;
   top: 20px;
 }
 
 /* Khi có dữ liệu hoặc hover, biểu tượng đổi màu */
-.inputbox input:not(:placeholder-shown)~ion-icon,
+.inputbox input:not(:placeholder-shown) ~ ion-icon,
 .inputbox:hover ion-icon {
-  color: #333;
+  color: #565151;
 }
 
 /* Thêm cursor cho icon mắt */
@@ -174,7 +174,7 @@ h1 {
   margin-top: 51.4px;
   margin-left: 15px;
   margin-right: 15px;
-  color: #565151;
+  color: #ffffff;
 }
 
 .selectbox label {
@@ -188,11 +188,12 @@ h1 {
   top: -35%;
   right: 8px;
   font-size: 1.2rem;
+  color: white;
 }
 
 .selectbox select {
   width: 100%;
-  max-width: 200px;
+
   height: 60px;
   background: transparent;
   border: none;
@@ -213,12 +214,12 @@ h1 {
 }
 
 /* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
-.selectbox select:-webkit-autofill~label {
+.selectbox select:-webkit-autofill ~ label {
   top: -7px;
   color: #333;
 }
 
-.selectbox select:-webkit-autofill~ion-icon {
+.selectbox select:-webkit-autofill ~ ion-icon {
   color: #333;
 }
 
@@ -239,18 +240,15 @@ button {
 
 button:hover {
   background-color: #565151;
-}
-
-button:hover p {
   color: rgb(255, 255, 255);
 }
-
 .selectbox {
   position: relative;
   margin: 30px 15px;
   border-bottom: 2px solid #565151;
   color: #565151;
   width: 230px;
+  width: 240px;
 }
 
 .selectbox label {
@@ -258,7 +256,7 @@ button:hover p {
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  color: #565151;
+  color: #706464;
   font-size: 1rem;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
@@ -267,17 +265,20 @@ button:hover p {
 
 .selectbox select {
   width: 100%;
-  max-width: 200px;
   height: 60px;
   background: transparent;
   border: none;
   outline: none;
   font-size: 1rem;
   padding: 0 35px 0 5px;
-  color: #565151;
+  color: #ffffff;
   appearance: none;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+.selectbox option {
+  background-color: rgb(94, 85, 85);
 }
 
 /* Đổi màu biểu tượng khi autofill (đã di chuyển lên trên) */
@@ -287,6 +288,30 @@ button:hover p {
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.2rem;
-  color: #565151;
+  color: white;
   pointer-events: none;
+}
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.home a ion-icon {
+  font-size: 20px;
+  color: #565151;
+  border: 2px solid white;
+  padding: 7px;
+  border-radius: 20px;
+  background-color: white;
+  transition: 0.3s;
+}
+.home a ion-icon:hover {
+  background-color: #565151;
+  color: white;
+  border: 2px solid #565151;
 }
