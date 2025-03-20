@@ -1,0 +1,15 @@
+@import './variables';
+
+.home-page {
+  padding: 20px 0; /* Thêm padding để tránh đè footer */
+}
+
+.hero {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}

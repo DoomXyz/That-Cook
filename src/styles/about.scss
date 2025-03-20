@@ -1,0 +1,53 @@
+@use 'sass:color';
+
+@import './variables';
+
+.about-page {
+  padding: 20px 0;
+  background-image: url('../assets/images/bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.form-action {
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    padding: 5px;
+    margin-left: 10px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: $primary-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: color.adjust($primary-color, $lightness: -10%); // Dùng sass:color
+    }
+  }
+}
+
+.home-link {
+  display: inline-block;
+  margin: 10px 0;
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
