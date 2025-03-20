@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("https://i.imgur.com/RlCfwMn.jpeg");
+  background-image: url("https://i.imgur.com/Z7pUIfs.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -31,15 +31,15 @@ section {
 
 h1 {
   font-size: 2rem;
-  color: white;
+  color: #565151;
   text-align: center;
 }
 
 .inputbox {
   position: relative;
   margin: 40px 15px;
-  border-bottom: 2px solid #ffffff;
-  color: white;
+  border-bottom: 2px solid#565151;
+  color: #565151;
 }
 
 /* Khi có dữ liệu hoặc hover, viền đổi màu */
@@ -53,17 +53,17 @@ h1 {
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  color: white;
+  color: #565151;
   font-size: 1rem;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
 }
 
 /* Khi có dữ liệu hoặc hover, nhãn di chuyển lên */
-.inputbox input:not(:placeholder-shown) ~ label,
+.inputbox input:not(:placeholder-shown)~label,
 .inputbox:hover label {
   top: -5px;
-  color: rgb(255, 255, 255);
+  color: #565151(0 89% 5%);
 }
 
 .inputbox input {
@@ -76,7 +76,7 @@ h1 {
   font-size: 1rem;
   padding: 0 50px 0 5px;
   /* Giữ padding-right để dành chỗ cho icon */
-  color: white;
+  color: #565151;
   margin-bottom: -15px;
   box-sizing: border-box;
   overflow: hidden;
@@ -97,25 +97,25 @@ h1 {
 }
 
 /* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
-.inputbox input:not([type="password"]):-webkit-autofill ~ label {
+.inputbox input:not([type="password"]):-webkit-autofill~label {
   top: -5px;
   color: #333;
 }
 
-.inputbox input:not([type="password"]):-webkit-autofill ~ ion-icon {
+.inputbox input:not([type="password"]):-webkit-autofill~ion-icon {
   color: #333;
 }
 
 .inputbox ion-icon {
   position: absolute;
   right: 8px;
-  color: white;
+  color: #565151;
   font-size: 1.2rem;
   top: 20px;
 }
 
 /* Khi có dữ liệu hoặc hover, biểu tượng đổi màu */
-.inputbox input:not(:placeholder-shown) ~ ion-icon,
+.inputbox input:not(:placeholder-shown)~ion-icon,
 .inputbox:hover ion-icon {
   color: #333;
 }
@@ -135,7 +135,7 @@ h1 {
 .forget {
   margin: 45px 0;
   font-size: 0.85rem;
-  color: white;
+  color: #565151;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,7 +169,7 @@ h1 {
 }
 
 .forget a {
-  color: white;
+  color: #565151;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
@@ -214,7 +214,7 @@ button:hover {
 
 .login p a {
   text-decoration: none;
-  color: white;
+  color: #565151;
   font-weight: 600;
 }
 
@@ -240,8 +240,21 @@ button:hover {
   background-color: white;
   transition: 0.3s;
 }
+
 .home a ion-icon:hover {
   background-color: #565151;
-  color: white;
+  color: #565151;
   border: 2px solid #565151;
+}
+
+.back-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 71.5vh;
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
