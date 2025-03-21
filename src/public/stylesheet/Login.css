@@ -38,14 +38,13 @@ h1 {
 .inputbox {
   position: relative;
   margin: 40px 15px;
-  border-bottom: 2px solid#565151;
+  border-bottom: 2px solid #565151;
   color: #565151;
 }
 
-/* Khi có dữ liệu hoặc hover, viền đổi màu */
 .inputbox:hover,
-.inputbox:has(input:not(:placeholder-shown)) {
-  border-bottom: 2px solid rgb(95, 94, 95);
+.inputbox input:not(:placeholder-shown) ~ .inputbox {
+  border-bottom: 2px solid #333;
 }
 
 .inputbox label {
@@ -59,11 +58,10 @@ h1 {
   transition: all 0.5s ease-in-out;
 }
 
-/* Khi có dữ liệu hoặc hover, nhãn di chuyển lên */
-.inputbox input:not(:placeholder-shown)~label,
+.inputbox input:not(:placeholder-shown) ~ label,
 .inputbox:hover label {
   top: -5px;
-  color: #565151(0 89% 5%);
+  color: #565151;
 }
 
 .inputbox input {
@@ -75,7 +73,6 @@ h1 {
   outline: none;
   font-size: 1rem;
   padding: 0 50px 0 5px;
-  /* Giữ padding-right để dành chỗ cho icon */
   color: #565151;
   margin-bottom: -15px;
   box-sizing: border-box;
@@ -84,7 +81,6 @@ h1 {
   text-overflow: ellipsis;
 }
 
-/* Ghi đè autofill cho input (trừ password nếu cần) */
 .inputbox input:not([type="password"]):-webkit-autofill,
 .inputbox input:not([type="password"]):-webkit-autofill:hover,
 .inputbox input:not([type="password"]):-webkit-autofill:focus,
@@ -96,13 +92,12 @@ h1 {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Di chuyển nhãn và đổi màu biểu tượng khi autofill */
-.inputbox input:not([type="password"]):-webkit-autofill~label {
+.inputbox input:not([type="password"]):-webkit-autofill ~ label {
   top: -5px;
-  color: #333;
+  color: #565151;
 }
 
-.inputbox input:not([type="password"]):-webkit-autofill~ion-icon {
+.inputbox input:not([type="password"]):-webkit-autofill ~ ion-icon {
   color: #333;
 }
 
@@ -114,17 +109,14 @@ h1 {
   top: 20px;
 }
 
-/* Khi có dữ liệu hoặc hover, biểu tượng đổi màu */
-.inputbox input:not(:placeholder-shown)~ion-icon,
+.inputbox input:not(:placeholder-shown) ~ ion-icon,
 .inputbox:hover ion-icon {
   color: #333;
 }
 
-/* Thêm hiệu ứng hover cho icon mắt */
 .inputbox ion-icon[name="eye-off-outline"],
 .inputbox ion-icon[name="eye-outline"] {
   cursor: pointer;
-  /* Chỉ áp dụng cursor cho icon mắt */
 }
 
 .inputbox ion-icon[name="eye-off-outline"]:hover,
@@ -139,7 +131,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Canh giữa theo chiều dọc */
 }
 
 .forget label {
@@ -150,22 +141,15 @@ h1 {
 .forget label input {
   margin-right: 3px;
   cursor: pointer;
-  /* Thêm cursor cho checkbox */
   vertical-align: middle;
-  /* Canh giữa checkbox với văn bản */
   height: 18px;
-  /* Tăng chiều cao của checkbox */
-  width: px;
-  /* Tăng chiều rộng để cân đối */
+  width: 18px; /* Đã sửa lỗi cú pháp "px" thành giá trị hợp lệ */
 }
 
 .forget label span {
   font-size: 0.85rem;
-  /* Đảm bảo kích thước chữ "Ghi nhớ" bằng "Quên Mật khẩu" */
   line-height: 1;
-  /* Điều chỉnh chiều cao dòng */
   vertical-align: middle;
-  /* Canh giữa văn bản với checkbox */
 }
 
 .forget a {
@@ -173,9 +157,7 @@ h1 {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
-  /* Đảm bảo kích thước chữ "Quên Mật khẩu" */
   line-height: 1;
-  /* Điều chỉnh chiều cao dòng */
 }
 
 .forget a:hover {
@@ -243,7 +225,7 @@ button:hover {
 
 .home a ion-icon:hover {
   background-color: #565151;
-  color: #565151;
+  color: white;
   border: 2px solid #565151;
 }
 
@@ -253,7 +235,6 @@ button:hover {
   justify-content: center;
   height: 71.5vh;
   width: 100%;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

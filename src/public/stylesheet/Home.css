@@ -125,9 +125,9 @@ body {
       .others {
         display: flex;
         flex: 1.2;
-        img {
-          width: 25px;
-          height: 25px;
+        ion-icon {
+          font-size: 25px;
+          color: black;
         }
         input {
           border: none;
@@ -660,7 +660,7 @@ body {
 /* -----------------------CART----------------------------- */
 
 .cart {
-  padding: 100px 0;
+  padding: 130px 0;
   .container {
     .cart-top-warp {
       display: flex;
@@ -819,7 +819,7 @@ body {
 }
 /* -----------------------------Delivery-------------------------------- */
 .delivery {
-  padding: 100px 0;
+  padding: 130px 0;
   .container {
     .delivery-top-warp {
       display: flex;

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/Home.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Giao Hàng</title>
+  </head>
+  <body>
+    <!-----------------------------Header-------------------------------->
+    <header>
+      <div class="header-top">
+        <div class="logo">
+          <a href=""><img src="images/icon/Pet Accessories & Food.png" /></a>
+        </div>
+        <div class="menu">
+          <li>
+            <a href=""
+              >THỨC ĂN <br />
+              CHO CHÓ</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">THỨC ĂN HẠT CHO CHÓ</a></li>
+              <li><a href="">PATE CHO CHÓ</a></li>
+              <li>
+                <a href="">BÁNH THƯỜNG <br />& ĂN VẶT CHO CHÓ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href=""
+              >THỨC ĂN <br />
+              CHO MÈO</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">THỨC ĂN HẠT CHO MÈO</a></li>
+              <li><a href="">PATE CHO MÈO</a></li>
+              <li>
+                <a href="">BÁNH THƯỜNG<br />& ĂN VẶT CHO MÈO</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href=""
+              >PHỤ KIỆN <br />
+              CHO CHÓ</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">QUẦN ÁO CHO CHÓ</a></li>
+              <li><a href="">VÒNG CỔ & DÂY DẮT CHO CHÓ</a></li>
+              <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO CHÓ</a></li>
+              <li><a href="">BALO & TÚI ĐỰNG CHO CHÓ</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href=""
+              >PHỤ KIỆN <br />
+              CHO MÈO</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">QUẦN ÁO CHO MÈO</a></li>
+              <li><a href="">VÒNG CỔ & DÂY DẮT CHO MÈO</a></li>
+              <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO MÈO</a></li>
+              <li><a href="">BALO & TÚI ĐỰNG CHO MÈO</a></li>
+            </ul>
+          </li>
+          <li><a href="">THƯƠNG HIỆU</a></li>
+          <li><a href="">LIÊN HỆ</a></li>
+        </div>
+        <div class="others">
+          <li>
+            <a href="http://localhost:8080/cart" class="shopping-bag"
+              ><ion-icon name="bag-handle"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="http://localhost:8080/register" class="user"
+              ><ion-icon name="person"></ion-icon>
+              <p>Đăng nhập/ Đ.kí</p></a
+            >
+          </li>
+        </div>
+      </div>
+      <div class="searchs">
+        <input
+          placeholder="Tìm kiếm sản phẩm..."
+          type="input"
+          class="search"
+          name=""
+          maxlength="40"
+          size="20"
+        />
+        <img src="images/icon/loupe.png" alt="" />
+      </div>
+    </header>
+    <!-----------------------------Delivery-------------------------------->
+    <section class="delivery">
+      <div class="container">
+        <div class="delivery-top-warp">
+          <div class="delivery-top">
+            <div class="delivery-top-cart delivery-top-item">
+              <img src="images/icon/shopping-cart.png" alt="" />
+            </div>
+            <div class="delivery-top-mapmarker delivery-top-item">
+              <img src="images/icon/maps-and-flags.png" alt="" />
+            </div>
+            <div class="delivery-top-moneycheck delivery-top-item">
+              <img src="images/icon/cheque.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="delivery-content row">
+          <div class="delivery-content-left">
+            <p>Vui lòng chọn địa chỉ giao hàng:</p>
+            <div class="delivery-content-left-login row">
+              <p>
+                => <a href="" style="font-weight: bold">Đăng nhập</a> (Nếu bạn
+                đã có tài khoản)
+              </p>
+            </div>
+            <div class="delivery-content-left-khachle row">
+              <input checked name="loaikhach" type="radio" />
+              <p>
+                <span style="font-weight: bold">Khách lẻ </span>(Nếu bạn không
+                muốn lưu thông tin)
+              </p>
+            </div>
+            <div class="delivery-content-left-register row">
+              <input type="radio" id="registerr" name="loaikhach" />
+              <p>
+                <span style="font-weight: bold">Đăng ký </span>(Tạo tài khoản
+                với thông tin bên dưới)
+              </p>
+            </div>
+            <div class="delivery-content-left-input-top row">
+              <div class="delivery-content-left-input-top-item">
+                <label for="">Họ tên</label>
+                <input type="text" value="" />
+              </div>
+              <div class="delivery-content-left-input-top-item">
+                <label for="">Địa chỉ</label>
+                <input type="text" value="" />
+              </div>
+              <div class="delivery-content-left-input-top-item">
+                <label for="">Số điện thoại</label>
+                <input type="text" value="" />
+              </div>
+              <div class="delivery-content-left-input-top-item">
+                <label for="">Giới tính</label>
+                <select name="GioiTinh">
+                  <option value="1">Nam</option>
+                  <option value="2">Nữ</option>
+                  <option value="3">Khác</option>
+                </select>
+              </div>
+            </div>
+            <div class="delivery-content-left-input-bottom row">
+              <div class="delivery-content-left-input-bottom-item">
+                <label for="">Email</label>
+                <input type="text" />
+              </div>
+              <div class="delivery-content-left-input-bottom-item">
+                <label for="">Password</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="delivery-content-left-button row">
+              <a href=""><p><< Quay lại trang giỏ hàng</p></a>
+              <button>
+                <p style="font-weight: bold">THANH TOÁN VÀ GIAO HÀNG</p>
+              </button>
+            </div>
+          </div>
+          <div class="delivery-content-right">
+            <table>
+              <tr>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+              </tr>
+              <tr>
+                <td>
+                  Snack cho chó Natural Core Bánh Gà Vịt Cá tuyết sấy cứng gói
+                  40g
+                </td>
+                <td>1</td>
+                <td>
+                  <p>31.500</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+              <tr>
+                <td>Balo Túi đựng chó mèo Sandysnow Phi hành gia kính vàng</td>
+                <td>1</td>
+                <td>
+                  <p>301.500</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold" colspan="2">Tổng tiền hàng</td>
+                <td style="font-weight: bold">
+                  <p>333.000</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-----------------------------Footer-------------------------------->
+    <div class="footer">
+      <div class="contact">
+        <p>Thông tin liên hệ</p>
+        <li>
+          <b>Mincow</b> là trang mua sắm trực tuyến các sản phẩm bán lẻ dành cho
+          thú cưng của <b>Mincow Pet Shop</b>. <b>Công ty TNHH MINCOW</b>. Giấy
+          chứng nhận Đăng ký Kinh doanh số 0315592769 do Sở Kế hoạch và Đầu tư
+          Thành phố Hồ Chí Minh cấp ngày 28/03/2019.
+        </li>
+      </div>
+      <div class="address">
+        <p>Thông tin cửa hàng</p>
+        <li><b>Địa chỉ</b>: 136 Huỳnh Văn Bánh, p. 11, quận Phú Nhuận, HCM</li>
+        <li><b>0901131141</b></li>
+        <li>info@mincow.vn</li>
+      </div>
+      <div class="support">
+        <div class="suport-cus">
+          <p>Chăm sóc khách hàng</p>
+          <li>
+            <img src="images/icon/phone-call.png" alt="" /><b>0901131141</b>
+          </li>
+        </div>
+        <p>Follow Us</p>
+        <div class="social">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61572274223177"
+              ><img src="images/icon/social-fb.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""><img src="images/icon/play.png" alt="" /></a>
+          </li>
+          <li>
+            <a href=""><img src="images/icon/social-media.png" alt="" /></a>
+          </li>
+        </div>
+      </div>
+    </div>
+    <script src="fescript/Delivery.js"></script>
+  </body>
+</html>

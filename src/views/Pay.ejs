@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="stylesheet/Pay.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-----------------------------Header-------------------------------->
+    <header>
+      <div class="header-top">
+        <div class="logo">
+          <a href=""><img src="images/icon/Pet Accessories & Food.png" /></a>
+        </div>
+        <div class="menu">
+          <li>
+            <a href=""
+              >THỨC ĂN <br />
+              CHO CHÓ</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">THỨC ĂN HẠT CHO CHÓ</a></li>
+              <li><a href="">PATE CHO CHÓ</a></li>
+              <li>
+                <a href="">BÁNH THƯỜNG <br />& ĂN VẶT CHO CHÓ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href=""
+              >THỨC ĂN <br />
+              CHO MÈO</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">THỨC ĂN HẠT CHO MÈO</a></li>
+              <li><a href="">PATE CHO MÈO</a></li>
+              <li>
+                <a href="">BÁNH THƯỜNG<br />& ĂN VẶT CHO MÈO</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href=""
+              >PHỤ KIỆN <br />
+              CHO CHÓ</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">QUẦN ÁO CHO CHÓ</a></li>
+              <li><a href="">VÒNG CỔ & DÂY DẮT CHO CHÓ</a></li>
+              <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO CHÓ</a></li>
+              <li><a href="">BALO & TÚI ĐỰNG CHO CHÓ</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href=""
+              >PHỤ KIỆN <br />
+              CHO MÈO</a
+            >
+            <ul class="sub-menu">
+              <li><a href="">QUẦN ÁO CHO MÈO</a></li>
+              <li><a href="">VÒNG CỔ & DÂY DẮT CHO MÈO</a></li>
+              <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO MÈO</a></li>
+              <li><a href="">BALO & TÚI ĐỰNG CHO MÈO</a></li>
+            </ul>
+          </li>
+          <li><a href="">THƯƠNG HIỆU</a></li>
+          <li><a href="">LIÊN HỆ</a></li>
+        </div>
+        <div class="others">
+          <li>
+            <a href="http://localhost:8080/cart" class="shopping-bag"
+              ><ion-icon name="bag-handle"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="http://localhost:8080/register" class="user"
+              ><ion-icon name="person"></ion-icon>
+              <p>Đăng nhập/ Đ.kí</p></a
+            >
+          </li>
+        </div>
+      </div>
+      <div class="searchs">
+        <input
+          placeholder="Tìm kiếm sản phẩm..."
+          type="input"
+          class="search"
+          name=""
+          maxlength="40"
+          size="20"
+        />
+        <img src="images/icon/loupe.png" alt="" />
+      </div>
+    </header>
+    <!-----------------------------Pay-------------------------------->
+    <section class="pay">
+      <div class="container">
+        <div class="pay-top-warp">
+          <div class="pay-top">
+            <div class="pay-top-cart pay-top-item">
+              <img src="images/icon/shopping-cart.png" alt="" />
+            </div>
+            <div class="pay-top-mapmarker pay-top-item">
+              <img src="images/icon/maps-and-flags.png" alt="" />
+            </div>
+            <div class="pay-top-moneycheck pay-top-item">
+              <img src="images/icon/cheque.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="pay-content row">
+          <div class="pay-content-left">
+            <div class="pay-content-left-method-delivery">
+              <p style="font-weight: bold">Phương thức giao hàng</p>
+              <div class="pay-content-left-method-delivery-item">
+                <input type="radio" />
+                <label for="">Giao hàng chuyển phát nhanh</label>
+              </div>
+            </div>
+            <div class="pay-content-left-method-payment">
+              <p style="font-weight: bold">Phương thức thanh toán</p>
+              <p>
+                <u style="color: blue"><i>*Lưu ý:</i></u> Thông tin thẻ sẽ không
+                bao giờ được lưu lại
+              </p>
+              <div class="pay-content-left-method-payment-item">
+                <input type="radio" name="" id="" />
+                <label for="">Thanh toán bằng thẻ tín dụng (OnePay)</label>
+              </div>
+              <div class="pay-content-left-method-payment-item-img">
+                <img src="images/icon/visa.png" alt="" />
+                <img src="images/icon/card.png" alt="" />
+              </div>
+              <div class="pay-content-left-method-payment-item-input">
+                <p style="font-weight: bold">Hãy nhập thông tin thẻ</p>
+                <input
+                  type="text"
+                  name="card-number"
+                  maxlength="16"
+                  pattern="[0-9]{13,16}"
+                  placeholder="Số thẻ (13-16 chữ số)"
+                  required
+                />
+                <input
+                  type="text"
+                  name="cardholder-name"
+                  placeholder="Tên trên thẻ"
+                  required
+                />
+                <br />
+                <input
+                  type="text"
+                  name="expiry-date"
+                  pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+                  placeholder="MM/YY"
+                  required
+                />
+                <input
+                  type="text"
+                  name="cvv"
+                  maxlength="3"
+                  pattern="[0-9]{3}"
+                  placeholder="CVV"
+                  required
+                />
+              </div>
+
+              <div class="pay-content-left-method-payment-item">
+                <input type="radio" />
+                <label for="">Thanh toán bằng thẻ ngân hàng (OnePay)</label>
+              </div>
+            </div>
+          </div>
+          <div class="pay-content-right"></div>
+        </div>
+      </div>
+    </section>
+    <!-----------------------------Footer-------------------------------->
+    <div class="footer">
+      <div class="contact">
+        <p>Thông tin liên hệ</p>
+        <li>
+          <b>Mincow</b> là trang mua sắm trực tuyến các sản phẩm bán lẻ dành cho
+          thú cưng của <b>Mincow Pet Shop</b>. <b>Công ty TNHH MINCOW</b>. Giấy
+          chứng nhận Đăng ký Kinh doanh số 0315592769 do Sở Kế hoạch và Đầu tư
+          Thành phố Hồ Chí Minh cấp ngày 28/03/2019.
+        </li>
+      </div>
+      <div class="address">
+        <p>Thông tin cửa hàng</p>
+        <li><b>Địa chỉ</b>: 136 Huỳnh Văn Bánh, p. 11, quận Phú Nhuận, HCM</li>
+        <li><b>0901131141</b></li>
+        <li>info@mincow.vn</li>
+      </div>
+      <div class="support">
+        <div class="suport-cus">
+          <p>Chăm sóc khách hàng</p>
+          <li>
+            <img src="images/icon/phone-call.png" alt="" /><b>0901131141</b>
+          </li>
+        </div>
+        <p>Follow Us</p>
+        <div class="social">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61572274223177"
+              ><img src="images/icon/social-fb.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""><img src="images/icon/play.png" alt="" /></a>
+          </li>
+          <li>
+            <a href=""><img src="images/icon/social-media.png" alt="" /></a>
+          </li>
+        </div>
+      </div>
+    </div>
+    <script src="fescript/Home.js"></script>
+  </body>
+</html>
