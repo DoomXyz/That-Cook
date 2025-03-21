@@ -125,7 +125,7 @@
             <div class="pay-content-left-method-delivery">
               <p style="font-weight: bold">Phương thức giao hàng</p>
               <div class="pay-content-left-method-delivery-item">
-                <input type="radio" />
+                <input type="radio" checked />
                 <label for="">Giao hàng chuyển phát nhanh</label>
               </div>
             </div>
@@ -136,14 +136,19 @@
                 bao giờ được lưu lại
               </p>
               <div class="pay-content-left-method-payment-item">
-                <input type="radio" name="" id="" />
-                <label for="">Thanh toán bằng thẻ tín dụng (OnePay)</label>
+                <input type="radio" name="pay" id="creditCard" value="credit" />
+                <label for="creditCard"
+                  >Thanh toán bằng thẻ tín dụng (OnePay)</label
+                >
               </div>
               <div class="pay-content-left-method-payment-item-img">
-                <img src="images/icon/visa.png" alt="" />
-                <img src="images/icon/card.png" alt="" />
+                <img src="images/icon/visa.png" alt="Visa" />
+                <img src="images/icon/card.png" alt="MasterCard" />
               </div>
-              <div class="pay-content-left-method-payment-item-input">
+              <div
+                class="pay-content-left-method-payment-item-input"
+                id="creditInput"
+              >
                 <p style="font-weight: bold">Hãy nhập thông tin thẻ</p>
                 <input
                   type="text"
@@ -176,14 +181,109 @@
                   required
                 />
               </div>
-
               <div class="pay-content-left-method-payment-item">
-                <input type="radio" />
-                <label for="">Thanh toán bằng thẻ ngân hàng (OnePay)</label>
+                <input type="radio" name="pay" id="bankCard" value="bank" />
+                <label for="bankCard"
+                  >Thanh toán bằng thẻ ngân hàng (OnePay)</label
+                >
+              </div>
+              <div class="pay-content-left-method-payment-item-img">
+                <img src="images/icon/bank.png" alt="Bank" />
+              </div>
+              <div
+                class="pay-content-left-method-payment-item-input"
+                id="bankInput"
+              >
+                <p style="font-weight: bold">Hãy nhập thông tin thẻ</p>
+                <input
+                  type="text"
+                  name="card-number"
+                  maxlength="16"
+                  pattern="[0-9]{13,16}"
+                  placeholder="Số thẻ (13-16 chữ số)"
+                  required
+                />
+                <input
+                  type="text"
+                  name="cardholder-name"
+                  placeholder="Tên trên thẻ"
+                  required
+                />
+                <br />
+                <input
+                  type="text"
+                  name="expiry-date"
+                  pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+                  placeholder="MM/YY"
+                  required
+                />
+                <input
+                  type="text"
+                  name="cvv"
+                  maxlength="3"
+                  pattern="[0-9]{3}"
+                  placeholder="CVV"
+                  required
+                />
+              </div>
+              <div class="pay-content-left-method-payment-item">
+                <input type="radio" name="pay" id="cod" value="cod" checked />
+                <label for="cod">Thanh toán khi nhận hàng</label>
               </div>
             </div>
+            <a href=""><p><< Quay lại trang giao hàng</p></a>
           </div>
-          <div class="pay-content-right"></div>
+          <div class="pay-content-right">
+            <table>
+              <tr>
+                <th>Tên Sản Phẩm</th>
+                <th>Mô Tả</th>
+                <th>Số Lượng</th>
+                <th>Thành Tiền</th>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    Snack cho chó Natural Core Bánh Gà Vịt Cá tuyết sấy cứng gói
+                    40g
+                  </p>
+                </td>
+                <td><p>Hương vị: Bánh gà</p></td>
+                <td><p>1</p></td>
+                <td>
+                  <p>31.500</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Balo Túi đựng chó mèo Sandysnow Phi hành gia kính vàng</p>
+                </td>
+                <td><p>Màu sắc: Trắng</p></td>
+                <td>1</td>
+                <td>
+                  <p>301,500</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold" colspan="3">Tổng tiền hàng</td>
+                <td style="font-weight: bold">
+                  <p>333.000</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold" colspan="3">
+                  Giao hàng chuyển phát nhanh
+                </td>
+                <td style="font-weight: bold">
+                  <p>30.000</p>
+                  <sup>đ</sup>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -227,6 +327,6 @@
         </div>
       </div>
     </div>
-    <script src="fescript/Home.js"></script>
+    <script src="fescript/Pay.js"></script>
   </body>
 </html>
