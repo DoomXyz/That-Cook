@@ -14,52 +14,95 @@
   <!-----------------------------Header-------------------------------->
   <header>
     <div class="header-top">
-    <div class="logo">
-      <a href=""><img src="images/icon/Pet Accessories & Food.png"></a>
+      <div class="logo">
+        <a href=""><img src="images/icon/Pet Accessories & Food.png"></a>
+      </div>
+      <div class="menu">
+        <li><a href="">THỨC ĂN <br> CHO CHÓ</a>
+          <ul class="sub-menu">
+            <li><a href="">THỨC ĂN HẠT CHO CHÓ</a></li>
+            <li><a href="">PATE CHO CHÓ</a></li>
+            <li><a href="">BÁNH THƯỜNG <br>& ĂN VẶT CHO CHÓ</a></li>
+          </ul>
+        </li>
+        <li><a href="">THỨC ĂN <br> CHO MÈO</a>
+          <ul class="sub-menu">
+            <li><a href="">THỨC ĂN HẠT CHO MÈO</a></li>
+            <li><a href="">PATE CHO MÈO</a></li>
+            <li><a href="">BÁNH THƯỜNG<br>& ĂN VẶT CHO MÈO</a></li>
+          </ul>
+        </li>
+        <li><a href="">PHỤ KIỆN <br> CHO CHÓ</a>
+          <ul class="sub-menu">
+            <li><a href="">QUẦN ÁO CHO CHÓ</a></li>
+            <li><a href="">VÒNG CỔ & DÂY DẮT CHO CHÓ</a></li>
+            <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO CHÓ</a></li>
+            <li><a href="">BALO & TÚI ĐỰNG CHO CHÓ</a></li>
+          </ul>
+        </li>
+        <li><a href="">PHỤ KIỆN <br> CHO MÈO</a>
+          <ul class="sub-menu">
+            <li><a href="">QUẦN ÁO CHO MÈO</a></li>
+            <li><a href="">VÒNG CỔ & DÂY DẮT CHO MÈO</a></li>
+            <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO MÈO</a></li>
+            <li><a href="">BALO & TÚI ĐỰNG CHO MÈO</a></li>
+          </ul>
+        </li>
+        <li><a href="">THƯƠNG HIỆU</a></li>
+        <li><a href="">LIÊN HỆ</a></li>
+      </div>
+      <div class="others">          
+        <li><a href="http://localhost:8080/cart" class="shopping-bag"><ion-icon name="bag-handle"></ion-icon></a></li>
+        <li>
+          <a href="#" class="user" id="user-icon"><ion-icon name="person"></ion-icon><p>Đăng nhập/ Đ.kí</p></a>
+          <!-- Form thông tin người dùng -->
+          <div class="user-info-form" id="user-info-form">
+            <div class="form-header">
+              <h2>Thông tin người dùng</h2>
+              <span class="close-form" id="close-form">&times;</span>
+            </div>
+            <form>
+              <div class="r1">
+                <div class="user-img">
+                <img src="" alt="">
+              </div>
+              <div class="form-group">
+                <label for="name">Tên:</label>
+                <input type="text" id="name" name="name" value="Phoebe :3" readonly>
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" id="phone" name="phone" value="0901121130" readonly>
+              </div>
+            </div>
+            <div class="user-img-add">
+              <label for="image-upload">Sửa hình ảnh</label>
+              <input type="file" id="image-upload" name="image-upload" accept="image/*" style="display: none;">
+            </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="nguyenvana@example.com" readonly>
+              </div>
+              <div class="form-group password-group">
+                <label for="password">Mật khẩu:</label>
+                <div class="password-wrapper">
+                  <input type="password" id="password" name="password" value="squishy_phoebe" readonly>
+                  <span class="toggle-password">
+                    <ion-icon name="eye" class="eye-icon"></ion-icon>
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" id="address" name="address" value="123 Đường ABC, Quận 1, TP.HCM" readonly>
+              </div>
+            </form>
+          </div>
+        </li>
+      </div>
     </div>
-    <div class="menu">
-      <li><a href="">THỨC ĂN <br> CHO CHÓ</a>
-        <ul class="sub-menu">
-          <li><a href="">THỨC ĂN HẠT CHO CHÓ</a></li>
-          <li><a href="">PATE CHO CHÓ</a></li>
-          <li><a href="">BÁNH THƯỜNG <br>& ĂN VẶT CHO CHÓ</a></li>
-        </ul>
-      </li>
-      <li><a href="">THỨC ĂN <br> CHO MÈO</a>
-        <ul class="sub-menu">
-          <li><a href="">THỨC ĂN HẠT CHO MÈO</a></li>
-          <li><a href="">PATE CHO MÈO</a></li>
-          <li><a href="">BÁNH THƯỜNG<br>& ĂN VẶT CHO MÈO</a></li>
-        </ul>
-      </li>
-      <li><a href="">PHỤ KIỆN <br> CHO CHÓ</a>
-        <ul class="sub-menu">
-          <li><a href="">QUẦN ÁO CHO CHÓ</a></li>
-          <li><a href="">VÒNG CỔ & DÂY DẮT CHO CHÓ</a></li>
-          <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO CHÓ</a></li>
-          <li><a href="">BALO & TÚI ĐỰNG CHO CHÓ</a></li>
-        </ul>
-      </li>
-      <li><a href="">PHỤ KIỆN <br> CHO MÈO</a>
-        <ul class="sub-menu">
-          <li><a href="">QUẦN ÁO CHO MÈO</a></li>
-          <li><a href="">VÒNG CỔ & DÂY DẮT CHO MÈO</a></li>
-          <li><a href="">ĐỒ CHƠI & HUẤN LUYỆN CHO MÈO</a></li>
-          <li><a href="">BALO & TÚI ĐỰNG CHO MÈO</a></li>
-        </ul>
-      </li>
-      <li><a href="">THƯƠNG HIỆU</a></li>
-      <li><a href="">LIÊN HỆ</a></li>
-    </div>
-    <div class="others">          
-      <li><a href="http://localhost:8080/cart" class="shopping-bag"><ion-icon name="bag-handle"></ion-icon></a></li>
-      <li><a href="http://localhost:8080/register" class="user"><ion-icon name="person"></ion-icon><p>Đăng nhập/ Đ.kí</p></a></li>
-    </div>
-  </div>
     <div class="searchs">
-    <input placeholder="Tìm kiếm sản phẩm..." type="input" class="search" name="" maxlength="40" size= "20"> 
-    <img src="images/icon/loupe.png" alt="">
-  </div>
+      <input placeholder="Tìm kiếm sản phẩm..." type="input" class="search" name="" maxlength="40" size="20"> 
+      <img src="images/icon/loupe.png" alt="">
+    </div>
   </header>
   <!-----------------------------Banner-------------------------------->
   <div class="banner">

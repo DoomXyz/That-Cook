@@ -18,6 +18,10 @@ let usercart = (req, res) => {
   return res.render("Cart");
 };
 
+let userproduct = (req, res) => {
+  return res.render("Product");
+};
+
 let userdelivery = (req, res) => {
   return res.render("Delivery");
 };
@@ -96,4 +100,5 @@ module.exports = {
   usercart: usercart,
   userdelivery: userdelivery,
   userpay: userpay,
+  userproduct: userproduct,
 };

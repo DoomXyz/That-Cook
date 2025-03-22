@@ -37,11 +37,13 @@ body {
     background-color: rgb(255, 255, 255);
     z-index: 1;
     border-bottom: 1px solid rgba(103, 98, 98, 0.3);
+
     li {
       list-style: none;
       text-decoration: none;
       padding-left: 25px;
     }
+
     .searchs {
       display: flex;
       margin-right: 123px;
@@ -61,10 +63,12 @@ body {
         height: 20px;
       }
     }
+
     .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .logo {
         flex: 1.2;
         a {
@@ -75,6 +79,7 @@ body {
           }
         }
       }
+
       .menu {
         flex: 4;
         display: flex;
@@ -122,9 +127,11 @@ body {
           }
         }
       }
+
       .others {
         display: flex;
         flex: 1.2;
+        position: relative; /* Để form có thể định vị tương đối với .others */
         ion-icon {
           font-size: 25px;
           color: black;
@@ -144,6 +151,157 @@ body {
               color: black;
               margin-left: 5px;
               margin-top: 4px;
+            }
+          }
+        }
+
+        /* Định dạng form thông tin người dùng */
+        .user-info-form {
+          display: none; /* Ẩn form mặc định */
+          position: fixed; /* Sử dụng fixed để cố định form trên màn hình */
+          top: 0; /* Bắt đầu từ đỉnh màn hình */
+          right: 0; /* Sát bên phải */
+          width: 400px; /* Chiều rộng cố định */
+          height: 100vh; /* Chiều cao bằng màn hình */
+          background-color: rgb(80, 69, 69); /* Màu nâu đậm làm nền */
+          z-index: 1000; /* Đảm bảo form nằm trên banner */
+          padding: 20px;
+          border-radius: 0; /* Bỏ bo góc để form trải dài */
+          transform: translateX(100%); /* Ẩn form ra ngoài bên phải */
+          transition: transform 0.3s ease; /* Hiệu ứng trượt mượt mà */
+
+          &.active {
+            display: block; /* Hiện form khi có class active */
+            transform: translateX(0); /* Trượt form vào màn hình */
+          }
+          .password-group {
+            position: relative;
+          }
+
+          .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+          }
+
+          .password-wrapper input {
+            width: 100%;
+            padding-right: 40px; /* Để lại khoảng trống cho biểu tượng con mắt */
+          }
+
+          .toggle-password {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+          }
+
+          .toggle-password ion-icon {
+            font-size: 20px;
+            color: #f5f5dc; /* Màu kem nhạt giống các thành phần khác trong form */
+            transition: color 0.3s ease;
+          }
+
+          .toggle-password ion-icon:hover {
+            color: #fff; /* Chuyển sang trắng khi hover */
+          }
+          .r1 {
+            display: flex;
+            .user-img {
+              width: 125px;
+              height: 125px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+
+          .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+
+            h2 {
+              font-size: 18px;
+              margin: 0;
+              color: #f5f5dc; /* Màu chữ kem nhạt trên nền nâu */
+            }
+
+            .close-form {
+              cursor: pointer;
+              font-size: 24px;
+              color: #f5f5dc; /* Màu chữ kem nhạt */
+              font-weight: bold;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: #fff; /* Chuyển sang trắng khi hover */
+              }
+            }
+          }
+
+          /* Định dạng các trường trong form */
+          form {
+            display: flex;
+            flex-direction: column; /* Sắp xếp các trường theo cột */
+          }
+
+          .form-group {
+            margin-bottom: 15px;
+            label {
+              display: block;
+              font-size: 14px;
+              color: #f5f5dc; /* Màu chữ kem nhạt */
+              margin-bottom: 5px;
+            }
+
+            input {
+              width: 100%;
+              padding: 8px;
+              border-bottom: 3px solid #f5f5dc; /* Viền màu nâu nhạt */
+              border-radius: 3px;
+              font-size: 14px;
+              background-color: transparent; /* Màu nền input là màu kem nhạt */
+              color: #f5f5dc; /* Màu chữ trong input là màu nâu đậm */
+              margin-bottom: 10px;
+            }
+          }
+          .r1 {
+            .form-group {
+              margin-left: 20px;
+            }
+          }
+          .user-img-add {
+            margin-top: -22px;
+            margin-bottom: 15px;
+
+            input {
+              height: 27px;
+              width: 125px;
+              padding: 5px;
+              text-align: center;
+              border-radius: 5px;
+            }
+            margin-top: -22px;
+            margin-bottom: 15px;
+            label {
+              display: inline-block;
+              height: 27px;
+              width: 125px;
+              padding: 5px;
+              text-align: center;
+              border-radius: 5px;
+              background-color: #f5f5dc; /* Màu kem nhạt */
+              color: rgb(80, 69, 69); /* Màu nâu đậm */
+              cursor: pointer; /* Con trỏ chuột khi hover */
+              font-size: 14px;
+              line-height: 17px; /* Căn giữa chữ theo chiều dọc */
+              transition: background-color 0.3s ease;
+            }
+            label:hover {
+              background-color: #fff; /* Chuyển sang trắng khi hover */
             }
           }
         }
@@ -256,6 +414,7 @@ body {
             background-color: rgb(218, 217, 217);
           }
           .cartegory-left-li {
+            /* Ẩn form ra ngoài bên phải */
             position: relative;
             padding: 5px 0px;
             box-sizing: border-box;

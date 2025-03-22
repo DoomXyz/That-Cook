@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/Home.css" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -11,10 +12,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <link rel="stylesheet" href="stylesheet/Pay.css" />
-    <title>Document</title>
+    <title>Sản phẩm</title>
   </head>
-
   <body>
     <!-----------------------------Header-------------------------------->
     <header>
@@ -179,199 +178,89 @@
         <img src="images/icon/loupe.png" alt="" />
       </div>
     </header>
-    <!-----------------------------Pay-------------------------------->
-    <section class="pay">
+    <!-----------------------------Product-------------------------------->
+    <div class="product">
       <div class="container">
-        <div class="pay-top-warp">
-          <div class="pay-top">
-            <div class="pay-top-cart pay-top-item">
-              <img src="images/icon/shopping-cart.png" alt="" />
+        <div class="product-top row">
+          <p>Trang chủ</p>
+          <span>&#8594;</span>
+          <p>Thức ăn cho chó</p>
+        </div>
+        <div class="product-content row">
+          <div class="product-content-left row">
+            <div class="product-content-left-big-img">
+              <img src="images/productha/hinhtest8.jpg" alt="" />
             </div>
-            <div class="pay-top-mapmarker pay-top-item">
-              <img src="images/icon/maps-and-flags.png" alt="" />
+            <div class="product-content-left-small-imgs">
+              <img
+                src="images/productha/z5784946157876_ca6d5cca6c6bb7555674189abd9b97d2_1876be30f93d48e5bdaad3f30d4765a6_master.webp"
+                alt=""
+              />
+              <img
+                src="images/productha/z5784946149124_1a6f40c10bbb22c59e3743099c869163_79ee264382004ba8a9c1989aaeb026e8_master.webp"
+                alt=""
+              />
+              <img
+                src="images/productha/z5784946156991_9b76e1c9d2413b17aca9adaf5f5860b7_aba9b53dd2d14a04ae17580ca796c40c_master.webp"
+                alt=""
+              />
+              <img
+                src="images/productha/z5784946142882_57ca97bd2575409c9c24cb640bd36b53_a111036b626b40e59678fdf8609ca590_master.webp"
+                alt=""
+              />
+              <img
+                src="images/productha/z5784946146588_37f859eec17671a78bad486afe9f12b3_bff730f6d13d4f96bc7047d2cf95be4d_master.webp"
+                alt=""
+              />
             </div>
-            <div class="pay-top-moneycheck pay-top-item">
-              <img src="images/icon/cheque.png" alt="" />
+          </div>
+          <div class="product-content-right">
+            <div class="product-content-right-product-name">
+              <h1>
+                Snack cho chó Natural Core Bánh Gà Vịt Cá tuyết sấy cứng gói 40g
+              </h1>
+              <p>Mã sản phẩm: 8809319856986</p>
+            </div>
+            <div class="product-content-right-price">
+              <p>31.500<sup>đ</sup></p>
+            </div>
+            <div class="product-content-right-choice">
+              <p>Hương vị:</p>
+              <div class="choice">
+                <span>Bánh gà</span>
+                <span>Bánh vịt</span>
+                <span>Bánh cá tuyết</span>
+              </div>
+            </div>
+            <div class="quantity">
+              <p>Số lượng:</p>
+              <input type="number" min="0" value="1" />
+            </div>
+            <div class="product-content-right-product-button">
+              <button>THÊM VÀO GIỎ</button> <img src="" alt="" />
+            </div>
+            <div class="product-content-right-bottom">
+              <h1>Thông tin sản phẩm:</h1>
+              <div class="product-content-right-bottom-content">
+                <p>
+                  Bánh gà sấy cứng: Bánh thưởng cung cấp lượng Protein cao và ít
+                  chất béo, hỗ trợ phát triển xương khớp, giúp cơ thể thú cưng
+                  khoẻ mạnh toàn diện. <br />
+                  - Cung cấp nguồn dinh dưỡng dồi dào, giúp thú cưng xây dựng và
+                  duy trì cơ bắp khỏe mạnh. <br />
+                  - Thành phần giàu canxi và các khoáng chất thiết yếu trong
+                  bánh thưởng giúp hỗ trợ sức khoẻ xương khớp, đặc biệt phù hợp
+                  với các bé cưng đang trong giai đoạn phát triển. <br />
+                  - Với hàm lượng chất béo thấp, bánh gà sấy cứng là một lựa
+                  chọn hoàn hảo cho thú cưng ăn vặt mà không lo ngại về vấn đề
+                  cân nặng của bé cưng.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="pay-content row">
-          <div class="pay-content-left">
-            <div class="pay-content-left-method-delivery">
-              <p style="font-weight: bold">Phương thức giao hàng</p>
-              <div class="pay-content-left-method-delivery-item">
-                <input type="radio" checked />
-                <label for="">Giao hàng chuyển phát nhanh</label>
-              </div>
-            </div>
-            <div class="pay-content-left-method-payment">
-              <p style="font-weight: bold">Phương thức thanh toán</p>
-              <p>
-                <u style="color: blue"><i>*Lưu ý:</i></u> Thông tin thẻ sẽ không
-                bao giờ được lưu lại
-              </p>
-              <div class="pay-content-left-method-payment-item">
-                <input type="radio" name="pay" id="creditCard" value="credit" />
-                <label for="creditCard"
-                  >Thanh toán bằng thẻ tín dụng (OnePay)</label
-                >
-              </div>
-              <div class="pay-content-left-method-payment-item-img">
-                <img src="images/icon/visa.png" alt="Visa" />
-                <img src="images/icon/card.png" alt="MasterCard" />
-              </div>
-              <div
-                class="pay-content-left-method-payment-item-input"
-                id="creditInput"
-              >
-                <p style="font-weight: bold">Hãy nhập thông tin thẻ</p>
-                <input
-                  type="text"
-                  name="card-number"
-                  maxlength="16"
-                  pattern="[0-9]{13,16}"
-                  placeholder="Số thẻ (13-16 chữ số)"
-                  required
-                />
-                <input
-                  type="text"
-                  name="cardholder-name"
-                  placeholder="Tên trên thẻ"
-                  required
-                />
-                <br />
-                <input
-                  type="text"
-                  name="expiry-date"
-                  pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
-                  placeholder="MM/YY"
-                  required
-                />
-                <input
-                  type="text"
-                  name="cvv"
-                  maxlength="3"
-                  pattern="[0-9]{3}"
-                  placeholder="CVV"
-                  required
-                />
-              </div>
-              <div class="pay-content-left-method-payment-item">
-                <input type="radio" name="pay" id="bankCard" value="bank" />
-                <label for="bankCard"
-                  >Thanh toán bằng thẻ ngân hàng (OnePay)</label
-                >
-              </div>
-              <div class="pay-content-left-method-payment-item-img">
-                <img src="images/icon/bank.png" alt="Bank" />
-              </div>
-              <div
-                class="pay-content-left-method-payment-item-input"
-                id="bankInput"
-              >
-                <p style="font-weight: bold">Hãy nhập thông tin thẻ</p>
-                <input
-                  type="text"
-                  name="card-number"
-                  maxlength="16"
-                  pattern="[0-9]{13,16}"
-                  placeholder="Số thẻ (13-16 chữ số)"
-                  required
-                />
-                <input
-                  type="text"
-                  name="cardholder-name"
-                  placeholder="Tên trên thẻ"
-                  required
-                />
-                <br />
-                <input
-                  type="text"
-                  name="expiry-date"
-                  pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
-                  placeholder="MM/YY"
-                  required
-                />
-                <input
-                  type="text"
-                  name="cvv"
-                  maxlength="3"
-                  pattern="[0-9]{3}"
-                  placeholder="CVV"
-                  required
-                />
-              </div>
-              <div class="pay-content-left-method-payment-item">
-                <input type="radio" name="pay" id="cod" value="cod" checked />
-                <label for="cod">Thanh toán khi nhận hàng</label>
-              </div>
-            </div>
-            <a href=""><p><< Quay lại trang giao hàng</p></a>
-          </div>
-          <div class="pay-content-right">
-            <table>
-              <tr>
-                <th>Tên Sản Phẩm</th>
-                <th>Mô Tả</th>
-                <th>Số Lượng</th>
-                <th>Thành Tiền</th>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    Snack cho chó Natural Core Bánh Gà Vịt Cá tuyết sấy cứng gói
-                    40g
-                  </p>
-                </td>
-                <td><p>Hương vị: Bánh gà</p></td>
-                <td><p>1</p></td>
-                <td>
-                  <p>31.500</p>
-                  <sup>đ</sup>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Balo Túi đựng chó mèo Sandysnow Phi hành gia kính vàng</p>
-                </td>
-                <td><p>Màu sắc: Trắng</p></td>
-                <td><p>1</p></td>
-                <td>
-                  <p>301,500</p>
-                  <sup>đ</sup>
-                </td>
-              </tr>
-              <tr>
-                <td style="font-weight: bold" colspan="3">Tổng tiền hàng</td>
-                <td style="font-weight: bold">
-                  <p>333.000</p>
-                  <sup>đ</sup>
-                </td>
-              </tr>
-              <tr>
-                <td style="font-weight: bold" colspan="3">
-                  Giao hàng chuyển phát nhanh
-                </td>
-                <td style="font-weight: bold">
-                  <p>30.000</p>
-                  <sup>đ</sup>
-                </td>
-              </tr>
-              <tr>
-                <td style="font-weight: bold" colspan="3">TỔNG THANH TOÁN</td>
-                <td style="font-weight: bold">
-                  <p><b>333.000</b></p>
-                  <sup><b>đ</b></sup>
-                </td>
-              </tr>
-            </table>
-            <button class="pay-content-right-button">Hoàn thành</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
     <!-----------------------------Footer-------------------------------->
     <div class="footer">
       <div class="contact">
@@ -392,26 +281,24 @@
       <div class="support">
         <div class="suport-cus">
           <p>Chăm sóc khách hàng</p>
-          <li>
-            <img src="images/icon/phone-call.png" alt="" /><b>0901131141</b>
-          </li>
+          <li><img src="/icon/phone-call.png" alt="" /><b>0901131141</b></li>
         </div>
         <p>Follow Us</p>
         <div class="social">
           <li>
             <a href="https://www.facebook.com/profile.php?id=61572274223177"
-              ><img src="images/icon/social-fb.png" alt=""
+              ><img src="/icon/social-fb.png" alt=""
             /></a>
           </li>
           <li>
-            <a href=""><img src="images/icon/play.png" alt="" /></a>
+            <a href=""><img src="/icon/play.png" alt="" /></a>
           </li>
           <li>
-            <a href=""><img src="images/icon/social-media.png" alt="" /></a>
+            <a href=""><img src="/icon/social-media.png" alt="" /></a>
           </li>
         </div>
       </div>
     </div>
-    <script src="fescript/Pay.js"></script>
+    <script src="fescript/product.js"></script>
   </body>
 </html>

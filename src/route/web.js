@@ -19,6 +19,7 @@ let initWebRoutes = (app) => {
   router.get("/login", homeController.getLogin);
   router.get("/cart", homeController.usercart);
   router.get("/pay", homeController.userpay);
+  router.get("/product", homeController.userproduct);
   router.get("/delivery", homeController.userdelivery);
 
   router.post("/api/login", userController.handleLogin);
