@@ -20,7 +20,14 @@ let initWebRoutes = (app) => {
   router.get("/cart", homeController.usercart);
   router.get("/pay", homeController.userpay);
   router.get("/delivery", homeController.userdelivery);
+
   router.post("/api/login", userController.handleLogin);
+  //Chuẩn men RESTAPI
+  router.get("/api/get-taikhoan", userController.handleGetTaiKhoan);
+  router.post("/api/create-taikhoan", userController.handleCreateTaiKhoan);
+  router.put("/api/edit-taikhoan", userController.handleEditTaiKhoan);
+  router.delete("/api/delete-taikhoan", userController.handleDeleteTaiKhoan);
+
   return app.use("/", router);
 };
 
