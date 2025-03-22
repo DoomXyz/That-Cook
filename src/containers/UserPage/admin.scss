@@ -1,0 +1,63 @@
+.admin-container {
+    .main-title {
+        text-align: center;
+        color: rgb(70, 82, 54);
+        font-size: 2rem;
+    }
+    .users-table {
+        margin: 0, auto;
+        .table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            td,
+            th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            tr {
+                &:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #04aa6d;
+                color: white;
+            }
+            .btn-edit {
+                width: 40px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                color: darkgoldenrod;
+                font-size: 2rem;
+                cursor: pointer;
+                &:hover {
+                    background-color: #f3e4e4;
+                    border: 1px solid black;
+                    border-radius: 30%;
+                }
+            }
+            .btn-delete {
+                width: 40px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                color: darkred;
+                font-size: 2rem;
+                cursor: pointer;
+                &:hover {
+                    background-color: #f3e4e4;
+                    border: 1px solid black;
+                    border-radius: 30%;
+                }
+            }
+        }
+    }
+}
