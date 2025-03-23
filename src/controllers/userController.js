@@ -18,7 +18,8 @@ let handleLogin = async (req, res) => {
 }
 
 let handleGetTaiKhoan = async (req, res) => {
-    if (req.query.matk) {
+    let matk = req.query.matk
+    if (matk) {
         let taikhoan = await taikhoanService.getTaiKhoan(matk);
         return res.status(200).json({
             errCode: 0,
@@ -32,7 +33,6 @@ let handleGetTaiKhoan = async (req, res) => {
             taikhoan: []
         });
     }
-
 }
 
 let handleCreateTaiKhoan = async (req, res) => {
