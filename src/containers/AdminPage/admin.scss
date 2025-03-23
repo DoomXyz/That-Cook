@@ -1,20 +1,72 @@
 .admin-container {
+    padding: 0;
+    position: relative;
+
     .main-title {
         text-align: center;
-        color: rgb(70, 82, 54);
+        color: rgb(50, 77, 16);
         font-size: 2rem;
+        margin-bottom: 20px;
     }
+
+    .btn-create {
+        position: absolute;
+        left: 20px;
+        top: 7px;
+        appearance: none;
+        background-color: #ffffff;
+        border-radius: 40em;
+        border-style: none;
+        box-shadow: hsl(215, 100%, 84%) 0 -12px 6px inset;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        font-family: -apple-system, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.24px;
+        outline: none;
+        padding: 0.8rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        &:hover {
+            background-color: #ffc229;
+            box-shadow: #ff6314 0 -6px 8px inset;
+            transform: scale(1.125);
+        }
+
+        &:active {
+            transform: scale(1.025);
+        }
+
+        @media (min-width: 768px) {
+            font-size: 1.2rem;
+            padding: 0.6rem 1.5rem;
+        }
+    }
+
     .users-table {
-        margin: 0, auto;
+        width: 100%;
+        margin: 0;
+        overflow-x: auto;
+
         .table {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            min-width: 1000px;
+
             td,
             th {
                 border: 1px solid #ddd;
                 padding: 8px;
             }
+
             tr {
                 &:nth-child(even) {
                     background-color: #f2f2f2;
@@ -23,6 +75,7 @@
                     background-color: #ddd;
                 }
             }
+
             th {
                 padding-top: 12px;
                 padding-bottom: 12px;
@@ -30,6 +83,20 @@
                 background-color: #04aa6d;
                 color: white;
             }
+
+            th:last-child,
+            td:last-child {
+                min-width: 80px;
+                text-align: center;
+            }
+
+            td:last-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
+
             .btn-edit {
                 width: 40px;
                 border: none;
@@ -38,12 +105,14 @@
                 color: darkgoldenrod;
                 font-size: 2rem;
                 cursor: pointer;
+                line-height: 1;
                 &:hover {
                     background-color: #f3e4e4;
                     border: 1px solid black;
                     border-radius: 30%;
                 }
             }
+
             .btn-delete {
                 width: 40px;
                 border: none;
@@ -52,6 +121,7 @@
                 color: darkred;
                 font-size: 2rem;
                 cursor: pointer;
+
                 &:hover {
                     background-color: #f3e4e4;
                     border: 1px solid black;

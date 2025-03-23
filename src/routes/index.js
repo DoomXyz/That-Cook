@@ -2,8 +2,8 @@
 import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Login from '../containers/Login/Login';
-import AdminPage from '../containers/UserPage/Admin';
-import UserPage from '../containers/User/UserPage';
+import AdminPage from '../containers/AdminPage/Admin';
+// import UserPage from '../containers/User/UserPage';
 
 // class AppRoutes extends Component {
 //     render() {
@@ -24,7 +24,7 @@ const AppRoutes = () => {
         //phải đổi từ this.props.navigate('/...') sang this.props.nav('/...')
         <Routes>
             <Route path="/login" element={<Login navigate={navigate} />} />
-            <Route path="/user" element={<UserPage />} />
+            {/* <Route path="/user" element={<UserPage />} /> */}
             <Route path="/user/admin" element={<AdminPage navigate={navigate} />} />
         </Routes>
     );
