@@ -132,7 +132,7 @@ let createTaiKhoan = (data) => {
             if (isEmailExist) {
                 resolve({
                     errCode: 1,
-                    errCode: 'Email đã tồn tại trong hệ thống!',
+                    errMessage: 'Email đã tồn tại trong hệ thống!',
                 })
             }
             //Kiểm tra các dữ liệu đầy đủ chưa

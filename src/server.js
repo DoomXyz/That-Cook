@@ -2,17 +2,18 @@ import express from "express";
 import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine"
 import initWebRoutes from "./route/web";
-import cors from "cors"
-import connectDB from "./config/connectDB"
+import connectDB from "./config/connectDB";
+import cors from "cors";
+import jwt from "jsonwebtoken";
 require('dotenv').config();
 
 let app = express();
 
 // app.use(cors({ origin: true }));
 app.use(cors({
-    origin: 'http://localhost:3000', // Chỉ định rõ origin của frontend
+    origin: process.env.URL_REACT, // Chỉ định rõ origin của frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true // Cho phép credentials
 }));
 app.use(bodyParser.json());
