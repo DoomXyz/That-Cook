@@ -217,22 +217,67 @@ let createTaiKhoan = (data) => {
     })
 }
 
+let updateTaiKhoan = (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!data.matk) {
+                resolve({
+                    errCode: 1,
+                    errMessage: 'Missing required parameters!'
+                })
+            }
+            let taikhoan = await db.TaiKhoan.findOne({
+                where: { MATK: data.matk },
+                raw: false
+            })
+            if (data.Password || data.HoTen || data.GioiTinh || data.SDT || data.DiaChi || data.MaLoaiTK || data.Khoa) {
+                taikhoan.Password = data.Password ? await hashPassword(data.Password) : taikhoan.Password,
+                    taikhoan.HoTen = data.HoTen ? data.HoTen : taikhoan.HoTen,
+                    taikhoan.GioiTinh = data.GioiTinh ? data.GioiTinh : taikhoan.GioiTinh,
+                    taikhoan.SDT = data.SDT ? data.SDT : taikhoan.SDT,
+                    taikhoan.DiaChi = data.DiaChi ? data.DiaChi : taikhoan.DiaChi,
+                    taikhoan.MaLoaiTK = data.MaLoaiTK ? data.MaLoaiTK : taikhoan.MaLoaiTK,
+                    taikhoan.Khoa = data.Khoa ? data.Khoa : taikhoan.Khoa,
+                    await taikhoan.save();
+                resolve({
+                    errCode: 0,
+                    errMessage: 'Update account successfully!'
+                })
+            } else if (!taikhoan) {
+                resolve({
+                    errCode: 2,
+                    errMessage: 'Account not found!'
+                })
+            } else {
+                resolve({
+                    errCode: 2,
+                    errMessage: 'Nothing to change!'
+                })
+            }
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
+
 let deleteTaiKhoan = (matk) => {
     return new Promise(async (resolve, reject) => {
         let taikhoan = await db.TaiKhoan.findOne({
             where: { MATK: matk }
         })
-        if (!taikhoan) {
-            resolve({
-                errCode: 2,
-                errMessage: "Tài khoản cần xóa không tồn tại!"
-            })
-            await taikhoan.destroy();
+        if (taikhoan) {
+            await db.TaiKhoan.destroy({
+                where: { MATK: matk }
+            });
             resolve({
                 errCode: 0,
                 errMessage: "Xóa tài khoản thành công!"
             })
         }
+        resolve({
+            errCode: 2,
+            errMessage: "Tài khoản cần xóa không tồn tại!"
+        })
     })
 }
 
@@ -240,5 +285,6 @@ module.exports = {
     handleTaiKhoanLogin,
     getTaiKhoan,
     createTaiKhoan,
+    updateTaiKhoan,
     deleteTaiKhoan,
 }

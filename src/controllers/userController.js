@@ -41,6 +41,11 @@ let handleCreateTaiKhoan = async (req, res) => {
 }
 
 let handleEditTaiKhoan = async (req, res) => {
+    let response = await taikhoanService.updateTaiKhoan(req.body)
+    return res.status(200).json(response);
+}
+
+let handleDeleteTaiKhoan = async (req, res) => {
     if (!req.body.matk) {
         return res.status(200).json({
             errCode: 1,
@@ -49,10 +54,6 @@ let handleEditTaiKhoan = async (req, res) => {
     }
     let response = await taikhoanService.deleteTaiKhoan(req.body.matk);
     return res.status(200).json(response);
-}
-
-let handleDeleteTaiKhoan = async (req, res) => {
-
 }
 
 module.exports = {
