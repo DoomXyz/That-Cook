@@ -22,6 +22,10 @@ let userproduct = (req, res) => {
   return res.render("Product");
 };
 
+let ownerhome = (req, res) => {
+  return res.render("Owner");
+};
+
 let userdelivery = (req, res) => {
   return res.render("Delivery");
 };
@@ -101,4 +105,5 @@ module.exports = {
   userdelivery: userdelivery,
   userpay: userpay,
   userproduct: userproduct,
+  ownerhome: ownerhome,
 };

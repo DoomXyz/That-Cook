@@ -403,7 +403,7 @@ body {
           margin: 0;
           padding: 0;
           transform: translateX(65px);
-          border-radius: 10px;
+
           height: auto;
         }
         ul {
@@ -420,7 +420,7 @@ body {
             box-sizing: border-box;
             width: fit-content;
             border-bottom: 3px solid rgb(91, 82, 82);
-            border-radius: 4px;
+
             font-size: 24px;
             ul {
               top: 100%;
@@ -439,14 +439,14 @@ body {
               }
             }
             li {
-              margin-top: 11px;
-              margin-bottom: 7px;
+              list-style: circle;
+              margin-top: 7px;
+              margin-bottom: 11px;
               a {
-                border-radius: 10px;
+                font-weight: bold;
                 color: rgb(255, 255, 255);
-                font-weight: normal;
-                background-color: rgb(91, 82, 82);
-                border: 2px solid rgb(0, 0, 0);
+                color: rgb(80, 69, 69);
+                border-bottom: 2px solid rgb(0, 0, 0);
               }
             }
           }

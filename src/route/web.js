@@ -17,6 +17,7 @@ let initWebRoutes = (app) => {
   router.get("/delete-user", homeController.deleteFromdb);
   router.get("/Home", homeController.sanphamShow);
   router.get("/login", homeController.getLogin);
+  router.get("/owner", homeController.ownerhome);
   router.get("/cart", homeController.usercart);
   router.get("/pay", homeController.userpay);
   router.get("/product", homeController.userproduct);
