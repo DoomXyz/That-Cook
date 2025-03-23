@@ -4,7 +4,7 @@ import userController from "../controllers/userController";
 
 let router = express.Router();
 
-let initWebRoutes = (app) => {
+let initWebRoutes = (app, authenticateToken, requireAdmin) => {
   router.get("/", homeController.getHomePage);
 
   router.get("/register", homeController.userRegister);
@@ -14,7 +14,6 @@ let initWebRoutes = (app) => {
   router.get("/edit-user", homeController.userEdit);
   router.post("/put-user", homeController.updateTodb);
   router.get("/delete-user", homeController.deleteFromdb);
-  router.get("/delete-user", homeController.deleteFromdb);
   router.get("/Home", homeController.sanphamShow);
   router.get("/login", homeController.getLogin);
   router.get("/owner", homeController.ownerhome);
@@ -22,6 +21,16 @@ let initWebRoutes = (app) => {
   router.get("/pay", homeController.userpay);
   router.get("/product", homeController.userproduct);
   router.get("/delivery", homeController.userdelivery);
+
+
+  //Route cho admin
+  router.get("/user/admin", authenticateToken, requireAdmin, (req, res) => {
+    res.json({ errCode: 0, message: "Welcome to Admin Page", user: req.user });
+  });
+  //Route cho chủ cửa hàng
+  // router.get("/user/owner", authenticateToken, requireOwner, (req, res) => {
+  //   res.json({ errCode: 0, message: "Welcome to Owner Page", user: req.user });
+  // });
 
   router.post("/api/login", userController.handleLogin);
   //Chuẩn men RESTAPI

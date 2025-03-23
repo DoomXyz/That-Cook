@@ -1,5 +1,5 @@
 import taikhoanService from "../services/taikhoanService";
-
+import jwt from "jsonwebtoken";
 let handleLogin = async (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
@@ -10,11 +10,21 @@ let handleLogin = async (req, res) => {
         })
     }
     let taikhoanData = await taikhoanService.handleTaiKhoanLogin(email, password);
-    return res.status(200).json({
-        errCode: taikhoanData.errCode,
-        errMessage: taikhoanData.errMessage,
-        taikhoan: taikhoanData.taikhoan ? taikhoanData.taikhoan : {}
-    });
+    if (taikhoanData.errCode === 0) {
+        //Login thành công -> tạo jwt
+        const token = jwt.sign(
+            { MATK: taikhoanData.taikhoan.MATK, MaLoaiTK: taikhoanData.taikhoan.MaLoaiTK }, //Payload chứa thông tin cần thiết
+            process.env.JWT_SECRET || 'your-secret-key', //Secret key
+            { expiresIn: '1h' } //Token hết hạn sau 1 giờ đổi thành '30m' là thành 30 phút
+        );
+        return res.status(200).json({
+            errCode: taikhoanData.errCode,
+            errMessage: taikhoanData.errMessage,
+            taikhoan: taikhoanData.taikhoan ? taikhoanData.taikhoan : {},
+            token: token
+        });
+    }
+
 }
 
 let handleGetTaiKhoan = async (req, res) => {
