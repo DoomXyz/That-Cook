@@ -5,6 +5,7 @@ import { home, mailOutline, eyeOffOutline, eyeOutline } from "ionicons/icons"; /
 import './Login.scss'; //import scss
 import { handleLoginApi } from '../../services/userServices'; //import hành động login
 import { setUserInfo } from '../../store/actions/userActions'; //import hành động lưu thông tin người dùng xuống local storage để sử dụng
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -45,8 +46,15 @@ class Login extends Component {
             }
             //login thành công
             if (data && data.errCode === 0) {
-                this.props.setUserInfo(data.user); //data có dạng data.user chứa các thông tin của người dùng, truyền nó đi để tiền hành lưu vào local storage
-                this.props.navigate('/user'); //tiến hành chuyển hướng sang trang /user
+                // Lưu token vào localStorage
+                localStorage.setItem('token', data.token);
+                this.props.setUserInfo(data.taikhoan); //data có dạng data.user chứa các thông tin của người dùng, truyền nó đi để tiến hành lưu vào local storage
+                // Chuyển hướng dựa trên MaLoaiTK
+                if (data.taikhoan.MaLoaiTK === 1) {
+                    this.props.navigate('/user/admin'); // Admin vào trang admin
+                } else {
+                    this.props.navigate('/user'); // User thường vào trang user tương lại là về trang shop
+                }
             }
         } catch (error) {
             //lỗi không có thông tin được gửi đi api, trường hợp email và password đều trống

@@ -4,7 +4,14 @@ const handleLoginApi = (email, password) => {
     console.log('Sending request to:', axios.defaults.baseURL + '/api/login');
     return axios.post('/api/login', { email, password });
 }
-
+//Hàm gọi API cần token (ví dụ: kiểm tra /user/admin)
+const getAdminPage = (token) => {
+    return axios.get('/user/admin', {
+        headers: {
+            Authorization: `Bearer ${token}` //Gửi token trong header
+        }
+    });
+};
 //dùng cho ví dụ truyền tham số
 const getAllTaiKhoan = (thamso) => {
     return axios.get(`/api/get-taikhoan?matk=${thamso}`)
@@ -28,6 +35,7 @@ const editTaiKhoan = (data) => {
 
 export {
     handleLoginApi,
+    getAdminPage,
     getAllTaiKhoan,
     createTaiKhoan,
     deleteTaiKhoan,

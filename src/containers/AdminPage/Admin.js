@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { IonIcon } from "@ionic/react"; //import thư viện icon
-import { pencil, trash, add } from "ionicons/icons"; //chỉ import các icon cần dùng
-import './admin.scss'; //import scss
-import { getAllTaiKhoan, createTaiKhoan, deleteTaiKhoan, editTaiKhoan } from '../../services/userServices';
+import { pencil, trash, addOutline, logOutOutline } from "ionicons/icons"; //chỉ import các icon cần dùng
+import './Admin.scss'; //import scss
+import { getAllTaiKhoan, createTaiKhoan, deleteTaiKhoan, editTaiKhoan, getAdminPage } from '../../services/userServices';
 import AdminCreateUserModal from './AdminCreateUserModal';
 import AdminEditUserModal from './AdminEditUserModal';
 import { emitter } from '../../utils/emitter';
+import { logoutUser } from '../../store/actions/userActions';
 class Admin extends Component {
     //Life cycle:
     //1. chạy constructor để khai báo các state
@@ -19,10 +20,25 @@ class Admin extends Component {
             isShowCreateUserModal: false,
             isShowEditUserModal: false,
             userEdit: {},
+            isLoading: true,
         }
     }
     async componentDidMount() {
-        await this.loadAllTaiKhoan();
+        const token = localStorage.getItem('token');
+        if (!token || this.props.userMaLoaiTK !== 1) {
+            //Nếu không có token hoặc không phải admin, chuyển hướng về /login
+            this.props.navigate('/login');
+            return;
+        }
+        try {
+            //Gọi API để kiểm tra quyền truy cập /user/admin
+            await getAdminPage(token);
+            await this.loadAllTaiKhoan();
+            this.setState({ isLoading: false });
+        } catch (error) {
+            console.log('Access denied:', error);
+            this.props.navigate('/login'); //Nếu lỗi (token không hợp lệ), về /login
+        }
     }
     loadAllTaiKhoan = async () => {
         let response = await getAllTaiKhoan('ALL')
@@ -92,7 +108,15 @@ class Admin extends Component {
             console.log(e)
         }
     }
+    handleLogout = () => {
+        localStorage.removeItem('token'); // Xóa token khỏi localStorage
+        this.props.logoutUser(); // Reset Redux state về initialState
+        this.props.navigate('/login'); // Chuyển hướng về trang login
+    };
     render() {
+        if (this.state.isLoading) {
+            return <div>Loading...</div>; // Hiển thị khi đang kiểm tra quyền
+        }
         let arrTK = this.state.arrTaiKhoan;
         const getAccountType = (maLoaiTK) => {
             if (maLoaiTK === 1) return 'Admin';
@@ -126,7 +150,12 @@ class Admin extends Component {
                 <button className='btn-create'
                     onClick={() => this.toggleCreateUserModal()}
                 >
-                    <IonIcon icon={add}></IonIcon>
+                    <IonIcon icon={addOutline}></IonIcon>
+                </button>
+                <button className='btn-logout'
+                    onClick={() => this.handleLogout()}
+                >
+                    <IonIcon icon={logOutOutline}></IonIcon>
                 </button>
                 <div className='users-table'>
                     <table className='table'>
@@ -172,8 +201,10 @@ class Admin extends Component {
 }
 
 const mapStateToProps = (state) => ({
+    userMaLoaiTK: state.user.maLoaiTK, //Lấy MaLoaiTK từ Redux
 });
 
 const mapDispatchToProps = {
+    logoutUser,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);
