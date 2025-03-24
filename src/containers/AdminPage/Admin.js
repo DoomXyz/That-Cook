@@ -8,6 +8,7 @@ import AdminCreateUserModal from './AdminCreateUserModal';
 import AdminEditUserModal from './AdminEditUserModal';
 import { emitter } from '../../utils/emitter';
 import { logoutUser } from '../../store/actions/userActions';
+
 class Admin extends Component {
     //Life cycle:
     //1. chạy constructor để khai báo các state
