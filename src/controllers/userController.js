@@ -14,7 +14,7 @@ let handleLogin = async (req, res) => {
         //Login thành công -> tạo jwt
         const token = jwt.sign(
             { MATK: taikhoanData.taikhoan.MATK, MaLoaiTK: taikhoanData.taikhoan.MaLoaiTK }, //Payload chứa thông tin cần thiết
-            process.env.JWT_SECRET || 'your-secret-key', //Secret key
+            process.env.JWT_SECRET || 'shikanoko', //Secret key
             { expiresIn: '1h' } //Token hết hạn sau 1 giờ đổi thành '30m' là thành 30 phút
         );
         return res.status(200).json({
