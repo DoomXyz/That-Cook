@@ -38,6 +38,7 @@ class Login extends Component {
             //gọi api login ở backend, truyển email và password đi để kiểm tra
             //biến data dùng để lưu thông tin trả về từ api
             let data = await handleLoginApi(this.state.email, this.state.password);
+
             //nếu nhận được thông tin từ backend với mã lỗi khác 0 -> các trường hợp sai mail, sai pass,...
             if (data && data.errCode !== 0) {
                 this.setState({

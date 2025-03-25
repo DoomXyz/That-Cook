@@ -2,7 +2,17 @@ import axios from "../axios"
 
 const handleLoginApi = (email, password) => {
     console.log('Sending request to:', axios.defaults.baseURL + '/api/login');
-    return axios.post('/api/login', { email, password });
+    console.log('Payload:', { email, password });
+    return axios.post('/api/login', { email, password })
+        .then(response => {
+            console.log('Response received:', response);
+            return response;
+        })
+        .catch(error => {
+            console.error('Request failed:', error);
+            throw error;
+        });
+    // return axios.post('/api/login', { email, password });
 }
 //Hàm gọi API cần token (ví dụ: kiểm tra /user/admin)
 const getAdminPage = (token) => {

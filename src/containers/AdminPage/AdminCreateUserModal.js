@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { IonIcon } from "@ionic/react"; //import thư viện icon
 import { mailOutline, eyeOffOutline, eyeOutline, person, call, location, personOutline, text } from "ionicons/icons"; //chỉ import các icon cần dùng
-import './adminCreateUserModal.scss';
+import './AdminCreateUserModal.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { emitter } from '../../utils/emitter';
