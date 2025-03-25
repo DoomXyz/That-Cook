@@ -23,8 +23,13 @@ let handleLogin = async (req, res) => {
             taikhoan: taikhoanData.taikhoan ? taikhoanData.taikhoan : {},
             token: token
         });
+    } else {
+        return res.status(200).json({
+            errCode: taikhoanData.errCode,
+            errMessage: taikhoanData.errMessage,
+            taikhoan: {},
+        });
     }
-
 }
 
 let handleGetTaiKhoan = async (req, res) => {

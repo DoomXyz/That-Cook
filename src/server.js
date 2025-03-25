@@ -11,7 +11,7 @@ let app = express();
 
 // app.use(cors({ origin: true }));
 app.use(cors({
-    origin: process.env.URL_REACT, // Chỉ định rõ origin của frontend
+    origin: '*', // Chỉ định rõ origin của frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true // Cho phép credentials
