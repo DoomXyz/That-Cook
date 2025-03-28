@@ -25,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 3rem;
+    padding: 2rem 1rem;
 
     .login-content {
       position: relative;
@@ -56,7 +56,7 @@
       }
 
       .text-login {
-        font-size: 2rem;
+        font-size: 2.5rem;
         color: #565151;
         text-align: center;
       }
@@ -78,7 +78,7 @@
           left: 5px;
           transform: translateY(-50%);
           color: #565151;
-          font-size: 1rem;
+          font-size: 1.2rem;
           pointer-events: none;
           transition: all 0.5s ease-in-out;
         }
@@ -91,7 +91,7 @@
 
         input {
           width: 100%;
-          max-width: 300px;
+          width: 400px;
           height: 60px;
           background: transparent;
           border: none;
@@ -105,26 +105,24 @@
           white-space: nowrap;
           text-overflow: ellipsis;
 
-          &:not([type="password"]) {
-            &:-webkit-autofill,
-            &:-webkit-autofill:hover,
-            &:-webkit-autofill:focus,
-            &:-webkit-autofill:active {
-              -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-              -webkit-text-fill-color: #565151 !important;
-              border: none !important;
-              background: transparent !important;
-              transition: background-color 5000s ease-in-out 0s;
-            }
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+            -webkit-text-fill-color: #565151 !important;
+            border: none !important;
+            background: transparent !important;
+            transition: background-color 5000s ease-in-out 0s;
+          }
 
-            &:-webkit-autofill ~ label {
-              top: -5px;
-              color: #333;
-            }
+          &:-webkit-autofill ~ label {
+            top: -5px;
+            color: #333;
+          }
 
-            &:-webkit-autofill ~ ion-icon {
-              color: #333;
-            }
+          &:-webkit-autofill ~ ion-icon {
+            color: #333;
           }
         }
         .toggle-password {
