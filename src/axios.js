@@ -2,8 +2,14 @@ import axios from "axios";
 import _ from "lodash";
 
 const instance = axios.create({
+<<<<<<< HEAD
   baseURL: process.env.REACT_APP_BACKEND_URL || "localhost:8080",
   // withCredentials: true
+=======
+    baseURL: process.env.REACT_APP_BACKEND_URL,
+    timeout: 10000,
+    // withCredentials: true
+>>>>>>> 90fbd8e080dcfc96109e3836fdd709a606a7503b
 });
 
 //Interceptor để thêm token vào header của mọi request
