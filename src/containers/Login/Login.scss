@@ -36,7 +36,7 @@
         align-items: center;
         position: absolute;
         top: -24px;
-        left: -40px;
+        left: -7px;
 
         a ion-icon {
           font-size: 25px;
@@ -49,7 +49,7 @@
 
           &:hover {
             background-color: #565151;
-            color: #565151;
+            color: white;
             border: 2px solid #565151;
           }
         }
@@ -91,7 +91,7 @@
 
         input {
           width: 100%;
-          width: 400px;
+          width: 380px;
           height: 60px;
           background: transparent;
           border: none;
@@ -143,17 +143,16 @@
       }
 
       .password-util {
-        margin: 45px 0;
+        margin: 45px 0px;
         font-size: 0.85rem;
         color: #565151;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-
         label {
           display: flex;
           align-items: center;
-
+          margin-right: 155px;
           input.remember-password {
             margin-right: 3px;
             cursor: pointer;
@@ -227,6 +226,7 @@
 
             &:hover {
               text-decoration: underline;
+              cursor: pointer;
             }
           }
         }
