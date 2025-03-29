@@ -9,56 +9,141 @@ import {
   call,
   person,
   personOutline,
+  location,
 } from "ionicons/icons"; //chỉ import các icon cần dùng
 import "./Register.scss"; //import scss
+import { createTaiKhoan } from '../../services/userServices';
 
 class Register extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      HoTen: '',
+      SDT: '',
+      Email: '',
+      Password: '',
+      GioiTinh: 1,
+      confirmPassword: '',
+      DiaChi: '',
+      MaLoaiTK: 3,
+      isTogglePassword1: false,
+      isTogglePassword2: false,
+      errMessage: ''
+    };
   }
-  componentDidMount() {}
+  componentDidMount() { }
+  handleTogglePassword1 = () => {
+    this.setState({
+      isTogglePassword1: !this.state.isTogglePassword1
+    })
+  }
+  handleTogglePassword2 = () => {
+    this.setState({
+      isTogglePassword2: !this.state.isTogglePassword2
+    })
+  }
+  handleOnChangeInput = (event, type) => {
+    let copyState = { ...this.state };
+    copyState[type] = event.target.value;
+    this.setState({
+      ...copyState
+    })
+  }
+  checkValidateInput = () => {
+    let isValid = true;
+    if (this.state.Password !== this.state.confirmPassword) {
+      this.setState({
+        errMessage: 'Mật khẩu không trùng nhau'
+      })
+      isValid = false;
+    } else {
+      let arrInput = ['Email', 'Password', 'HoTen', 'SDT', 'DiaChi'];
+      let textInput = ['Email', 'Password', 'Họ tên', 'Số điện thoại', 'Địa chỉ']
+      for (let i = 0; i < arrInput.length; i++) {
+        if (!this.state[arrInput[i]]) {
+          isValid = false;
+          this.setState({
+            errMessage: textInput[i] + ' không được bỏ trống!'
+          })
+          break;
+        }
+      }
+    }
+    return isValid;
+  }
+  handleRegister = async (data) => {
+    this.setState({
+      errMessage: ''
+    })
+    let isValid = this.checkValidateInput();
+    if (isValid) {
+      try {
+        let response = await createTaiKhoan(data);
+        if (response && response.errCode !== 0) {
+          alert("Tạo tk thành công");
+        } else {
+          alert("cút mẹ r");
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
   render() {
     return (
       <div className="body">
         <div className="register-container">
-          <form>
+          <div className="form">
             <div className="home-button">
               <a href="">
                 <IonIcon icon={home}></IonIcon>
               </a>
             </div>
             <div className="register-content">
-              <h1>Đăng ký</h1>
+              <h1>ĐĂNG KÝ</h1>
               <div class="R1">
                 <div class="inputbox">
-                  <ion-icon name="person"></ion-icon>
-                  <input type="text" placeholder="" name="HoTen" required />
+                  <IonIcon icon={person}></IonIcon>
+                  <input
+                    type="text"
+                    placeholder=""
+                    value={this.state.HoTen}
+                    onChange={(event) => this.handleOnChangeInput(event, "HoTen")}
+                  />
                   <label>Họ Tên</label>
                 </div>
                 <div class="inputbox">
-                  <ion-icon name="call"></ion-icon>
-                  <input type="tel" placeholder="" name="SDT" required />
+                  <IonIcon icon={call}></IonIcon>
+                  <input
+                    type="tel"
+                    placeholder=""
+                    value={this.state.SDT}
+                    onChange={(event) => this.handleOnChangeInput(event, "SDT")}
+                  />
                   <label>Số điện thoại</label>
                 </div>
               </div>
               <div class="R1">
                 <div class="inputbox">
-                  <ion-icon name="mail-outline"></ion-icon>
-                  <input type="email" placeholder="" required name="Email" />
+                  <IonIcon icon={mailOutline}></IonIcon>
+                  <input
+                    type="email"
+                    placeholder=""
+                    value={this.state.Email}
+                    onChange={(event) => this.handleOnChangeInput(event, "Email")}
+                  />
                   <label>Email</label>
                 </div>
                 <div class="inputbox">
-                  <ion-icon
-                    name="eye-off-outline"
-                    id="togglePassword"
-                  ></ion-icon>
+                  <IonIcon
+                    icon={this.state.isTogglePassword1 ? eyeOutline : eyeOffOutline}
+                    onClick={() => this.handleTogglePassword1()}>
+                  </IonIcon>
                   <input
-                    type="password"
+                    type={this.state.isTogglePassword1 ? 'text' : 'password'}
                     placeholder=""
-                    name="Password"
-                    id="password"
-                    required
+                    value={this.state.Password}
+                    onChange={(event) => this.handleOnChangeInput(event, "Password")}
                   />
                   <label>Mật khẩu</label>
                 </div>
@@ -66,23 +151,26 @@ class Register extends Component {
               <div class="R1">
                 <div class="selectbox">
                   <label>Giới tính</label>
-                  <select name="GioiTinh">
+                  <select
+                    value={this.state.GioiTinh}
+                    onChange={(event) => this.handleOnChangeInput(event, "GioiTinh")}
+                  >
                     <option value="1">Nam</option>
                     <option value="2">Nữ</option>
                     <option value="3">Khác</option>
                   </select>
-                  <ion-icon name="person-outline"></ion-icon>
+                  <IonIcon icon={personOutline}></IonIcon>
                 </div>
                 <div class="inputbox">
-                  <ion-icon
-                    name="eye-off-outline"
-                    id="toggleConfirmPassword"
-                  ></ion-icon>
+                  <IonIcon
+                    icon={this.state.isTogglePassword2 ? eyeOutline : eyeOffOutline}
+                    onClick={() => this.handleTogglePassword2()}>
+                  </IonIcon>
                   <input
-                    type="password"
+                    type={this.state.isTogglePassword2 ? 'text' : 'password'}
                     placeholder=""
-                    id="confirmPassword"
-                    required
+                    value={this.state.confirmPassword}
+                    onChange={(event) => this.handleOnChangeInput(event, "confirmPassword")}
                   />
                   <label>Xác nhận mật khẩu</label>
                   <span id="passwordMismatch" class="error-message"></span>
@@ -90,23 +178,31 @@ class Register extends Component {
               </div>
               <div class="address">
                 <div class="inputbox">
-                  <ion-icon name="location"></ion-icon>
-                  <input type="text" placeholder="" name="DiaChi" required />
+                  <IonIcon icon={location}></IonIcon>
+                  <input
+                    type="text"
+                    placeholder=""
+                    value={this.state.DiaChi}
+                    onChange={(event) => this.handleOnChangeInput(event, "DiaChi")}
+                  />
                   <label>Địa chỉ</label>
                 </div>
               </div>
+              <div className='error-message'>
+                {this.state.errMessage}
+              </div>
               <button
                 className="register-button"
-                //quản lý event khi click vào thì gọi hàm
+                onClick={() => { this.handleRegister(this.state) }}
               >
-                <p>Đăng nhập</p>
+                <p>Đăng ký</p>
               </button>
               <div class="login">
                 <p>Đã có tài khoản?</p>
-                <a href="http://localhost:8080/login">Đăng nhập</a>
+                <a onClick={() => { this.props.navigate('/login') }}>Đăng nhập</a>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     );

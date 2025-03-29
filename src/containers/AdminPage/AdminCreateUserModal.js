@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { IonIcon } from "@ionic/react"; //import thư viện icon
 import { mailOutline, eyeOffOutline, eyeOutline, person, call, location, personOutline, text } from "ionicons/icons"; //chỉ import các icon cần dùng
 import './AdminCreateUserModal.scss';
+import { createTaiKhoan } from '../../services/userServices';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { emitter } from '../../utils/emitter';
@@ -20,7 +21,8 @@ class AdminCreateUserModal extends Component {
             GioiTinh: 1,
             DiaChi: '',
             MaLoaiTK: 3,
-            isTogglePassword: false,
+            isTogglePassword1: false,
+            isTogglePassword2: false,
             errMessage: ''
         }
         this.listenToEmitter();
@@ -36,7 +38,8 @@ class AdminCreateUserModal extends Component {
                 GioiTinh: 1,
                 DiaChi: '',
                 MaLoaiTK: 3,
-                isTogglePassword: false,
+                isTogglePassword1: false,
+                isTogglePassword2: false,
                 errMessage: ''
             })
         })
@@ -46,9 +49,14 @@ class AdminCreateUserModal extends Component {
     toggle = () => {
         this.props.toggleFromModal();
     }
-    handleTogglePassword = () => {
+    handleTogglePassword1 = () => {
         this.setState({
-            isTogglePassword: !this.state.isTogglePassword
+            isTogglePassword1: !this.state.isTogglePassword1
+        })
+    }
+    handleTogglePassword2 = () => {
+        this.setState({
+            isTogglePassword2: !this.state.isTogglePassword2
         })
     }
     handleOnChangeInput = (event, type) => {
@@ -134,15 +142,18 @@ class AdminCreateUserModal extends Component {
                             />
                             <label>Email</label>
                         </div>
-                        <div className="inputbox">
+                        <div className="inputbox" >
+
                             <div className="toggle-password"
-                                onClick={() => this.handleTogglePassword()}
+                                onClick={() => this.handleTogglePassword1()}
+                            /*có thể để event onclick lồng vào ionicon bên dưới, xem ví dụ ở trang register*/
                             >
+
                                 <IonIcon
-                                    icon={this.state.isTogglePassword ? eyeOutline : eyeOffOutline}></IonIcon>
+                                    icon={this.state.isTogglePassword1 ? eyeOutline : eyeOffOutline}></IonIcon>
                             </div>
                             <input
-                                type={this.state.isTogglePassword ? 'text' : 'password'}
+                                type={this.state.isTogglePassword1 ? 'text' : 'password'}
                                 placeholder=""
                                 value={this.state.Password}
                                 onChange={(event) => this.handleOnChangeInput(event, "Password")}
@@ -165,13 +176,13 @@ class AdminCreateUserModal extends Component {
                         </div>
                         <div className="inputbox">
                             <div className="toggle-password"
-                                onClick={() => this.handleTogglePassword()}
+                                onClick={() => this.handleTogglePassword2()}
                             >
                                 <IonIcon
-                                    icon={this.state.isTogglePassword ? eyeOutline : eyeOffOutline}></IonIcon>
+                                    icon={this.state.isTogglePassword2 ? eyeOutline : eyeOffOutline}></IonIcon>
                             </div>
                             <input
-                                type={this.state.isTogglePassword ? 'text' : 'password'}
+                                type={this.state.isTogglePassword2 ? 'text' : 'password'}
                                 placeholder=""
                                 value={this.state.confirmPassword}
                                 onChange={(event) => this.handleOnChangeInput(event, "confirmPassword")}

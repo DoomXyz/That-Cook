@@ -51,10 +51,11 @@ class Login extends Component {
                 localStorage.setItem('token', data.token);
                 this.props.setUserInfo(data.taikhoan); //data có dạng data.user chứa các thông tin của người dùng, truyền nó đi để tiến hành lưu vào local storage
                 // Chuyển hướng dựa trên MaLoaiTK
-                if (data.taikhoan.MaLoaiTK === 1) {
-                    this.props.navigate('/user/admin'); // Admin vào trang admin
-                } else {
-                    this.props.navigate('/user'); // User thường vào trang user tương lại là về trang shop
+                switch (data.taikhoan.MaLoaiTK) {
+                    case 1: return this.props.navigate('/user/admin');
+                    case 2: return this.props.navigate('/user/admin');
+                    case 3: return this.props.navigate('/user/admin');
+                    default: return this.props.navigate('/login');
                 }
             }
         } catch (error) {
@@ -135,7 +136,7 @@ class Login extends Component {
                         <div className='signin'>
                             <p>
                                 Không có tài khoản?
-                                <a href=""> Đăng ký ngay</a>
+                                <a onClick={() => { this.props.navigate('/register') }}> Đăng ký ngay</a>
                             </p>
                         </div>
                     </div>

@@ -21,25 +21,25 @@ class Admin extends Component {
             isShowCreateUserModal: false,
             isShowEditUserModal: false,
             userEdit: {},
-            isLoading: true,
         }
     }
     async componentDidMount() {
-        const token = localStorage.getItem('token');
-        if (!token || this.props.userMaLoaiTK !== 1) {
-            //Nếu không có token hoặc không phải admin, chuyển hướng về /login
-            this.props.navigate('/login');
-            return;
-        }
-        try {
-            //Gọi API để kiểm tra quyền truy cập /user/admin
-            await getAdminPage(token);
-            await this.loadAllTaiKhoan();
-            this.setState({ isLoading: false });
-        } catch (error) {
-            console.log('Access denied:', error);
-            this.props.navigate('/login'); //Nếu lỗi (token không hợp lệ), về /login
-        }
+        // const token = localStorage.getItem('token');
+        // if (!token || this.props.userMaLoaiTK !== 1) {
+        //     //Nếu không có token hoặc không phải admin, chuyển hướng về /login
+        //     this.props.navigate('/login');
+        //     return;
+        // }
+        // try {
+        //     //Gọi API để kiểm tra quyền truy cập /user/admin
+        //     await getAdminPage(token);
+        //     await this.loadAllTaiKhoan();
+        //     this.setState({ isLoading: false });
+        // } catch (error) {
+        //     console.log('Access denied:', error);
+        //     this.props.navigate('/login'); //Nếu lỗi (token không hợp lệ), về /login
+        // }
+        await this.loadAllTaiKhoan();
     }
     loadAllTaiKhoan = async () => {
         let response = await getAllTaiKhoan('ALL')
@@ -109,15 +109,15 @@ class Admin extends Component {
             console.log(e)
         }
     }
-    handleLogout = () => {
-        localStorage.removeItem('token'); // Xóa token khỏi localStorage
-        this.props.logoutUser(); // Reset Redux state về initialState
-        this.props.navigate('/login'); // Chuyển hướng về trang login
-    };
+    // handleLogout = () => {
+    //     localStorage.removeItem('token'); // Xóa token khỏi localStorage
+    //     this.props.logoutUser(); // Reset Redux state về initialState
+    //     this.props.navigate('/login'); // Chuyển hướng về trang login
+    // };
     render() {
-        if (this.state.isLoading) {
-            return <div>Loading...</div>; // Hiển thị khi đang kiểm tra quyền
-        }
+        // if (this.state.isLoading) {
+        //     return <div>Loading...</div>; // Hiển thị khi đang kiểm tra quyền
+        // }
         let arrTK = this.state.arrTaiKhoan;
         const getAccountType = (maLoaiTK) => {
             if (maLoaiTK === 1) return 'Admin';
@@ -202,10 +202,10 @@ class Admin extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    userMaLoaiTK: state.user.maLoaiTK, //Lấy MaLoaiTK từ Redux
+    // userMaLoaiTK: state.user.maLoaiTK, //Lấy MaLoaiTK từ Redux
 });
 
 const mapDispatchToProps = {
-    logoutUser,
+    // logoutUser,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);

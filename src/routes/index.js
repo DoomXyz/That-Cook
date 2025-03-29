@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "../containers/Login/Login";
 import AdminPage from "../containers/AdminPage/Admin";
 import Register from "../containers/Register/Register";
+import Home from "../containers/Home/Home";
 // import UserPage from '../containers/User/UserPage';
 
 // class AppRoutes extends Component {
@@ -27,7 +28,8 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login navigate={navigate} />} />
       {/* <Route path="/user" element={<UserPage />} /> */}
       <Route path="/user/admin" element={<AdminPage navigate={navigate} />} />
-      <Route path="/Register" element={<Register navigate={navigate} />} />
+      <Route path="/register" element={<Register navigate={navigate} />} />
+      <Route path="/home" element={<Home navigate={navigate} />} />
     </Routes>
   );
 };
